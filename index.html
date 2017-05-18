@@ -303,7 +303,7 @@ You must replace <code>access-token</code> with access-token.
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-<h2 id="update-user-profile">Update User Profile</h2>
+<h2 id="login">Login</h2>
 
 <blockquote>
 <p>Result</p>
@@ -327,10 +327,6 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
 <h3 id="endpoint">Endpoint</h3>
 
 <p><code class="prettyprint">POST /user/login</code></p>
@@ -348,11 +344,6 @@ Remember — a happy kitten is an authenticated kitten!
 <td>email</td>
 <td>true</td>
 <td>Email for identifier</td>
-</tr>
-<tr>
-<td>password</td>
-<td>true</td>
-<td>Password for identifier</td>
 </tr>
 </tbody></table>
 
@@ -362,31 +353,12 @@ Remember — a happy kitten is an authenticated kitten!
 <p>Result</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"591a7f0278448125a40e2e05"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-16T04:24:34.997Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-16T04:24:34.997Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kurniawan Yudha Putrama"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"point"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"interest"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kurniawan.yudha.p@gmail.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YsiB178DsupgDWKKIFivQLWprbpMNmkReME"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MWE3ZjAyNzg0NDgxMjVhNDBlMmUwNSIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJpYXQiOjE0OTUwODA4NzIsImV4cCI6MTUwMDI2NDg3Mn0.ifqk3SbJClaXMTQ0Xi9O8uZpCZgt348JfByppTy5lBQ"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MWE3ZjAyNzg0NDgxMjVhNDBlMmUwNSIsInR5cGUiOiJyZWZyZXNoX3Rva2VuIiwiaWF0IjoxNDk1MDgwODcyLCJleHAiOjE1MjY2Mzg0NzJ9.sPfngp5sGdih8mzx0VZdlDMQwcDutw0IWMC6yhMQuug"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<h3 id="confirm-email">Confirm Email</h3>
 
-<aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-<h3 id="endpoint">Endpoint</h3>
-
-<p><code class="prettyprint">POST /user/login</code></p>
+<p><code class="prettyprint">POST /user/confirm_email</code></p>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -398,14 +370,9 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>email</td>
+<td>key</td>
 <td>true</td>
-<td>Email for identifier</td>
-</tr>
-<tr>
-<td>password</td>
-<td>true</td>
-<td>Password for identifier</td>
+<td>Key for confirmation</td>
 </tr>
 </tbody></table>
 
