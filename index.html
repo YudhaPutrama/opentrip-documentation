@@ -228,7 +228,7 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to Open Trip API! Use <code class="prettyprint">http://opentrip.trivalier.id</code> for endpoint host</p>
+<p>Welcome to Open Trip API! Use <code class="prettyprint">http://opentrip.trivalier.id:8000</code> for endpoint host</p>
 
 <h1 id="authentication">Authentication</h1>
 
@@ -239,7 +239,7 @@
 You must replace <code>access-token</code> with access-token.
 </aside>
 
-<h1 id="user">User</h1>
+          <h1 id="account">Account</h1>
 
 <h2 id="register">Register</h2>
 
@@ -267,7 +267,7 @@ You must replace <code>access-token</code> with access-token.
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Register a new user using email</p>
+<p>Register a new user using email adn password</p>
 
 <h3 id="endpoint">Endpoint</h3>
 
@@ -303,30 +303,35 @@ You must replace <code>access-token</code> with access-token.
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-<h2 id="login">Login</h2>
+<h2 id="login-manual">Login Manual</h2>
 
 <blockquote>
 <p>Result</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"591a7f0278448125a40e2e05"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-16T04:24:34.997Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-16T04:24:34.997Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kurniawan Yudha Putrama"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"point"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"interest"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kurniawan.yudha.p@gmail.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YsiB178DsupgDWKKIFivQLWprbpMNmkReME"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MWE3ZjAyNzg0NDgxMjVhNDBlMmUwNSIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJpYXQiOjE0OTUwODA4NzIsImV4cCI6MTUwMDI2NDg3Mn0.ifqk3SbJClaXMTQ0Xi9O8uZpCZgt348JfByppTy5lBQ"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MWE3ZjAyNzg0NDgxMjVhNDBlMmUwNSIsInR5cGUiOiJyZWZyZXNoX3Rva2VuIiwiaWF0IjoxNDk1MDgwODcyLCJleHAiOjE1MjY2Mzg0NzJ9.sPfngp5sGdih8mzx0VZdlDMQwcDutw0IWMC6yhMQuug"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5921e5246518bb29d8159771"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-21T19:06:12.934Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-21T19:06:12.934Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paijo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"point"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"interest"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"block"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"following"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes@tes.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"k6SgNkzFAFfHuNFWPNMtPQj99IajdMhA1go79lVm"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjFlNTI0NjUxOGJiMjlkODE1OTc3MSIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJpYXQiOjE0OTU0MjUzODgsImV4cCI6MTUwMDYwOTM4OH0.8AP4seI3HOCiJqP-2QXzr46MzpNkPca80lm1crgdV7A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjFlNTI0NjUxOGJiMjlkODE1OTc3MSIsInR5cGUiOiJyZWZyZXNoX3Rva2VuIiwiaWF0IjoxNDk1NDI1Mzg4LCJleHAiOjE1MjY5ODI5ODh9.CE2cKlVzuyzfduwl7OGC1JzzkRJni-ctPNn4ZhsqzV0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<p>User login application with email and password.</p>
+
 <h3 id="endpoint">Endpoint</h3>
 
 <p><code class="prettyprint">POST /user/login</code></p>
@@ -348,7 +353,74 @@ Remember — a happy kitten is an authenticated kitten!
 <tr>
 <td>password</td>
 <td>true</td>
-<td>Email for identifier</td>
+<td>Password for identifier</td>
+</tr>
+</tbody></table>
+
+<h2 id="instagram-login">Instagram Login</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5921e5c4b9ffb22ac4b58e3c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-21T19:08:52.726Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-21T19:08:52.726Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arizal Saputro"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id_instagram"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1574083"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"access_token_instagram"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb2e77d.47a0479900504cb3ab4a1f626d174d2d"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-1/p160x160/11174930_992304550841336_4056769259860245295_n.jpg?oh=2f85c038be8336b14699cbbe7ac3f89b&amp;oe=599F7276"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"point"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"interest"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"block"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"following"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjFlNWM0YjlmZmIyMmFjNGI1OGUzYyIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJpYXQiOjE0OTU0MjU3MzQsImV4cCI6MTUwMDYwOTczNH0.PV5me3Ljcy4EYjVk4pkRx97jyvFGmHFpM502qk-6rGA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjFlNWM0YjlmZmIyMmFjNGI1OGUzYyIsInR5cGUiOiJyZWZyZXNoX3Rva2VuIiwiaWF0IjoxNDk1NDI1NzM0LCJleHAiOjE1MjY5ODMzMzR9.r9KeRQ4Gp9mhb1Fk-DCpqfzgI4LmwM0lqFyOuwxltBE"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>User login application with instagram account.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/login_instagram</code></p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>user access_token by instagram account</td>
+</tr>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>user id instagram account</td>
+</tr>
+<tr>
+<td>username</td>
+<td>true</td>
+<td>username instagram account</td>
+</tr>
+<tr>
+<td>profile_picture</td>
+<td>false</td>
+<td>user profile picture</td>
+</tr>
+<tr>
+<td>full_name</td>
+<td>false</td>
+<td>user full_name of instagram account</td>
 </tr>
 </tbody></table>
 
@@ -358,12 +430,53 @@ Remember — a happy kitten is an authenticated kitten!
 <p>Result</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<h3 id="confirm-email">Confirm Email</h3>
+<p>User will receive email to reset password</p>
 
-<p><code class="prettyprint">POST /user/confirm_email</code></p>
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/forget_password</code></p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>true</td>
+<td>Registered email address</td>
+</tr>
+</tbody></table>
+
+<h2 id="verify-email">Verify Email</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-22T04:27:23.049Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5921e5246518bb29d8159771"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes@tes.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>To verify user email address</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">PUT /user/confirm_email</code></p>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -377,15 +490,60 @@ Remember — a happy kitten is an authenticated kitten!
 <tr>
 <td>key</td>
 <td>true</td>
-<td>Key for confirmation</td>
+<td>Unique key from to verify email address</td>
 </tr>
 </tbody></table>
 
+<h2 id="refreshtoken">RefreshToken</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5921e5246518bb29d8159771"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjFlNTI0NjUxOGJiMjlkODE1OTc3MSIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJpYXQiOjE0OTU0Mjc4NDQsImV4cCI6MTUwMDYxMTg0NH0.BkdPTO-H2NnB-kWxxPTDLpclc9L7pa-h7TRAuCGLtUc"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjFlNTI0NjUxOGJiMjlkODE1OTc3MSIsInR5cGUiOiJyZWZyZXNoX3Rva2VuIiwiaWF0IjoxNDk1NDI3ODQ0LCJleHAiOjE1MjY5ODU0NDR9.CRzb1_c2d536-bn-QG0JaDze5fAdyAHIwDcDT29R2eM"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get user access_token, use this then access_token was expired</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/refresh_token</code></p>
+
+<h3 id="header">Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+<th>example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>refresh_token</td>
+<td><code class="prettyprint">Authorization: Bearer &lt;refresh_token&gt;</code></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>refresh_token</code> with refresh_token.
+Remember! header is <code>refresh_token</code> , NOT <code>access_token</code>
+</aside>
+
           <h1 id="errors">Errors</h1>
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&lsquo;s frontmatter. Files are included in the order listed.</aside>
+<aside class="notice">
+This is error handling
+</aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>The OpenTrip Api uses the following error codes by response code:</p>
 
 <table><thead>
 <tr>
@@ -436,6 +594,83 @@ Remember — a happy kitten is an authenticated kitten!
 <tr>
 <td>503</td>
 <td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+<p>The OpenTrip Api also uses the following error codes :</p>
+
+<p><code>
+{
+  &quot;error&quot;: true,
+  &quot;code&quot;: &quot;PASSWORD_NOT_MATCH&quot;
+}
+</code></p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>INVALID_EMAIL_ADDRESS</td>
+<td>Bad Request &ndash; Your email address is sucks</td>
+</tr>
+<tr>
+<td>INVALID_KEY</td>
+<td>Not Found &ndash; Your key no found</td>
+</tr>
+<tr>
+<td>INVALID_TOKEN</td>
+<td>Bad Request &ndash; Your token is sucks</td>
+</tr>
+<tr>
+<td>PASSWORD_TOO_SHORT</td>
+<td>Bad Request &ndash; Your password to short</td>
+</tr>
+<tr>
+<td>EMAIL_ADDRESS_NOT_REGISTERED</td>
+<td>Not Found &ndash; Email address not registered</td>
+</tr>
+<tr>
+<td>PASSWORD_NOT_MATCH</td>
+<td>Bad Request &ndash; Wrong password</td>
+</tr>
+<tr>
+<td>EMAIL_ALREADY_USE</td>
+<td>Bad Request &ndash; Email address already registered</td>
+</tr>
+<tr>
+<td>PHONE_NUMBER_ALREADY_USE</td>
+<td>Bad Request &ndash; Phone Number already registered</td>
+</tr>
+<tr>
+<td>ID_INSTAGRAM_ALREADY_USE</td>
+<td>Baf Request &ndash; Instagram id already registered</td>
+</tr>
+<tr>
+<td>USERNAME_INSTAGRAM_ALREADY_USE</td>
+<td>Bad Request &ndash; Username alredy registered</td>
+</tr>
+<tr>
+<td>ACCESS_TOKEN_REQUIRED</td>
+<td>Bad Request &ndash; Need access_token</td>
+</tr>
+<tr>
+<td>REFRESH_TOKEN_REQUIRED</td>
+<td>Bad Request &ndash; Need refresh_token</td>
+</tr>
+<tr>
+<td>USER_NOT_FOUND</td>
+<td>Not Found &ndash; user not registered</td>
+</tr>
+<tr>
+<td>PARAMETER_REQUIRED</td>
+<td>Bad Request &ndash; Need required parameter</td>
+</tr>
+<tr>
+<td>UNKNOWN_ERROR</td>
+<td>Error &ndash; unexpected error</td>
 </tr>
 </tbody></table>
 
