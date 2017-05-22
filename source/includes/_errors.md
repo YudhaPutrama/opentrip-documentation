@@ -1,8 +1,10 @@
 # Errors
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+<aside class="notice">
+This is error handling
+</aside>
 
-The Kittn API uses the following error codes:
+The OpenTrip Api uses the following error codes by response code:
 
 
 Error Code | Meaning
@@ -18,3 +20,35 @@ Error Code | Meaning
 429 | Too Many Requests -- You're requesting too many kittens! Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+
+
+
+
+The OpenTrip Api also uses the following error codes :
+
+<code>
+{
+  "error": true,
+  "code": "PASSWORD_NOT_MATCH"
+}
+</code>
+
+Error Code | Meaning
+---------- | -------
+INVALID_EMAIL_ADDRESS | Bad Request -- Your email address is sucks
+INVALID_KEY | Not Found -- Your key no found
+INVALID_TOKEN | Bad Request -- Your token is sucks
+PASSWORD_TOO_SHORT | Bad Request -- Your password to short
+EMAIL_ADDRESS_NOT_REGISTERED | Not Found -- Email address not registered
+PASSWORD_NOT_MATCH | Bad Request -- Wrong password
+EMAIL_ALREADY_USE | Bad Request -- Email address already registered
+PHONE_NUMBER_ALREADY_USE | Bad Request -- Phone Number already registered
+ID_INSTAGRAM_ALREADY_USE | Baf Request -- Instagram id already registered
+USERNAME_INSTAGRAM_ALREADY_USE | Bad Request -- Username alredy registered
+ACCESS_TOKEN_REQUIRED | Bad Request -- Need access_token
+REFRESH_TOKEN_REQUIRED | Bad Request -- Need refresh_token
+USER_NOT_FOUND | Not Found -- user not registered
+PARAMETER_REQUIRED | Bad Request -- Need required parameter
+UNKNOWN_ERROR | Error -- unexpected error
+
+
