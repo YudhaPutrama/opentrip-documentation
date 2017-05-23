@@ -8,21 +8,22 @@
 {
   "error": false,
   "data": {
-    "updatedAt": "2017-05-18T06:39:31.966Z",
-    "createdAt": "2017-05-18T06:39:31.966Z",
-    "name": "Kurniawan",
-    "_id": "591d41a3f80b8827308b2526",
+    "updatedAt": "2017-05-23T02:12:41.283Z",
+    "createdAt": "2017-05-23T02:12:41.283Z",
+    "name": "arizal",
+    "_id": "59239a99feb15e3830fd8813",
     "point": 0,
     "interest": [],
-    "email": {
-      "data": "kurniawan.yudha.p@gmail.com",
-      "verified": false,
-      "key": "z0PGSaBivm2Asjx7m0TmNFfc0Q53AtBC612"
-    },
+    "gender": "UNKNOWN",
+    "block": 0,
     "following": 0,
-    "follower": 0,
-    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MWQ0MWEzZjgwYjg4MjczMDhiMjUyNiIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJpYXQiOjE0OTUwODk1NzEsImV4cCI6MTUwMDI3MzU3MX0.fzVtnufkH7dGn15uYO4ke_SDQ6Q3P0oD01oqZT6zOkk",
-    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MWQ0MWEzZjgwYjg4MjczMDhiMjUyNiIsInR5cGUiOiJyZWZyZXNoX3Rva2VuIiwiaWF0IjoxNDk1MDg5NTcyLCJleHAiOjE1MjY2NDcxNzJ9.wr2zGhorpsUGJ2br0pBjPDh3s8JTEp1CUe-d6VhLMM0"
+    "email": {
+      "data": "tes@tes.com",
+      "verified": false
+    },
+    "followers": 0,
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjM5YTk5ZmViMTVlMzgzMGZkODgxMyIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJpYXQiOjE0OTU1MDU1NjEsImV4cCI6MTUwMDY4OTU2MX0.1ezJfr7oS525SZIk9cMAvIYcmypQiF9qHWvGWtQJsYk",
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjM5YTk5ZmViMTVlMzgzMGZkODgxMyIsInR5cGUiOiJyZWZyZXNoX3Rva2VuIiwiaWF0IjoxNDk1NTA1NTYxLCJleHAiOjE1MjcwNjMxNjF9.jVyoVDUNEF6UFcKkDrsLcmyzQhHGMr717btMnxEteJ4"
   }
 }
 ```
@@ -53,20 +54,32 @@ Remember — a happy kitten is an authenticated kitten!
 {
   "error": false,
   "data": {
-    "_id": "5921e5246518bb29d8159771",
-    "updatedAt": "2017-05-21T19:06:12.934Z",
-    "createdAt": "2017-05-21T19:06:12.934Z",
-    "name": "paijo",
-    "point": 0,
-    "interest": [],
-    "block": [],
-    "following": 0,
-    "email": {
-      "data": "tes@tes.com",
-      "verified": false,
-      "key": "k6SgNkzFAFfHuNFWPNMtPQj99IajdMhA1go79lVm"
-    },
-    "followers": 0,
+   "_id": "59239a99feb15e3830fd8813",
+       "updatedAt": "2017-05-23T02:15:21.075Z",
+       "createdAt": "2017-05-23T02:12:41.283Z",
+       "name": "njayen",
+       "address": "jalan jalan",
+       "bio": "Gas",
+       "birth_date": "1970-01-18T07:24:20.306Z",
+       "profile_cover": "api.arizalsaputro.net",
+       "profile_picture": "www.arizalsaputro.net",
+       "point": 0,
+       "interest": [
+         "apaya",
+         "ehh"
+       ],
+       "gender": "MALE",
+       "block": 0,
+       "following": 0,
+       "phone_number": {
+         "data": "08783666786",
+         "verified": false
+       },
+       "email": {
+         "data": "muhammadarizals1@gmail.com",
+         "verified": false
+       },
+       "followers": 0
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjFlNTI0NjUxOGJiMjlkODE1OTc3MSIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJpYXQiOjE0OTU0MjUzODgsImV4cCI6MTUwMDYwOTM4OH0.8AP4seI3HOCiJqP-2QXzr46MzpNkPca80lm1crgdV7A",
     "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjFlNTI0NjUxOGJiMjlkODE1OTc3MSIsInR5cGUiOiJyZWZyZXNoX3Rva2VuIiwiaWF0IjoxNDk1NDI1Mzg4LCJleHAiOjE1MjY5ODI5ODh9.CE2cKlVzuyzfduwl7OGC1JzzkRJni-ctPNn4ZhsqzV0"
   }
@@ -95,18 +108,33 @@ password | true | Password for identifier
 {
   "error": false,
   "data": {
-    "_id": "5921e5c4b9ffb22ac4b58e3c",
-    "updatedAt": "2017-05-21T19:08:52.726Z",
-    "createdAt": "2017-05-21T19:08:52.726Z",
-    "name": "Arizal Saputro",
-    "id_instagram": "1574083",
-    "access_token_instagram": "fb2e77d.47a0479900504cb3ab4a1f626d174d2d",
-    "profile_picture": "https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-1/p160x160/11174930_992304550841336_4056769259860245295_n.jpg?oh=2f85c038be8336b14699cbbe7ac3f89b&oe=599F7276",
+     "_id": "59239a99feb15e3830fd8813",
+    "updatedAt": "2017-05-23T02:15:21.075Z",
+    "createdAt": "2017-05-23T02:12:41.283Z",
+    "name": "njayen",
+    "address": "jalan jalan",
+    "bio": "Gas",
+    "birth_date": "1970-01-18T07:24:20.306Z",
+    "profile_cover": "api.arizalsaputro.net",
+    "profile_picture": "www.arizalsaputro.net",
     "point": 0,
-    "interest": [],
-    "block": [],
+    "interest": [
+      "apaya",
+      "ehh"
+    ],
+    "gender": "MALE",
+    "block": 0,
     "following": 0,
-    "followers": 0,
+    "phone_number": {
+      "data": "08783666786",
+      "verified": false
+    },
+    "email": {
+      "data": "muhammadarizals1@gmail.com",
+      "verified": false
+    },
+    "followers": 0
+    "id_instagram": "1574083",
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjFlNWM0YjlmZmIyMmFjNGI1OGUzYyIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJpYXQiOjE0OTU0MjU3MzQsImV4cCI6MTUwMDYwOTczNH0.PV5me3Ljcy4EYjVk4pkRx97jyvFGmHFpM502qk-6rGA",
     "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MjFlNWM0YjlmZmIyMmFjNGI1OGUzYyIsInR5cGUiOiJyZWZyZXNoX3Rva2VuIiwiaWF0IjoxNDk1NDI1NzM0LCJleHAiOjE1MjY5ODMzMzR9.r9KeRQ4Gp9mhb1Fk-DCpqfzgI4LmwM0lqFyOuwxltBE"
   }
@@ -154,6 +182,64 @@ Parameter | Required | Description
 --------- | ---------| -----------
 email | true | Registered email address
 
+## Reset Password
+
+> Result
+
+```json
+{
+    "error": false,
+}
+```
+
+Reset password user if forget the password
+
+### Endpoint
+
+`POST /user/reset_password`
+
+### Parameters
+
+Parameter | Required | Description
+--------- | ---------| -----------
+key | true | unique key
+new_password | true | new password
+
+
+## Change Password
+
+> Result
+
+```json
+{
+  "error": false
+}
+```
+
+Updating user password
+
+### Endpoint
+
+`PUT /user/update/password`
+
+### Header
+
+Name | Required | Description | example
+--------- | ---------| -----------| -------------
+Authorization | true | access_token | `Authorization: Bearer <access_token>`
+
+<aside class="notice">
+You must replace <code>access_token</code> with access_token.
+</aside>
+
+### Parameters
+
+Parameter | Required | Description
+--------- | ---------| -----------
+old_password | true | user old password
+new_password | true | user new password
+
+
 ## Verify Email
 
 > Result
@@ -184,6 +270,43 @@ To verify user email address
 Parameter | Required | Description
 --------- | ---------| -----------
 key | true | Unique key from to verify email address
+
+## Verify Phone Number
+
+> Result
+
+```json
+{
+  "error": false,
+  "data": {
+    "updatedAt": "2017-05-22T04:27:23.049Z",
+    "_id": "5921e5246518bb29d8159771",
+    "phone_number": {
+      "data": "085641030148",
+      "verified": true
+    }
+  }
+}
+```
+
+To verify user phone number
+
+
+### Endpoint
+
+`PUT /user/verify/phone_number`
+
+### Header
+
+Name | Required | Description | example
+--------- | ---------| -----------| -------------
+Authorization | true | access_token | `Authorization: Bearer <access_token>`
+
+### Parameters
+
+Parameter | Required | Description
+--------- | ---------| -----------
+code | true | phone number verification code
 
 ## RefreshToken
 
