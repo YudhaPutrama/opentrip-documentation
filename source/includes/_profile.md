@@ -33,7 +33,8 @@
       "data": "muhammadarizals1@gmail.com",
       "verified": false
     },
-    "followers": 0
+    "followers": 0,
+    "follow_you":false
   }
 }
 ```
@@ -49,6 +50,8 @@ Get user data profile by id
 Parameter | Required | Description
 --------- | ------- | -----------
 id | true | user id `_id`
+from | optional | user id `_id`,to get follow you or not
+
 
 
 ## Update User Profile
