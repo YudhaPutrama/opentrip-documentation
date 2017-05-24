@@ -22,7 +22,7 @@
       "apaya",
       "ehh"
     ],
-    "gender": "MALE",
+    "gender": 0,
     "block": 0,
     "following": 0,
     "phone_number": {
@@ -76,7 +76,7 @@ from | optional | user id `_id`,to get follow you or not
       "apaya",
       "ehh"
     ],
-    "gender": "FEMALE",
+    "gender": 1,
     "block": 0,
     "following": 0,
     "phone_number": {
@@ -113,9 +113,9 @@ You must replace <code>access_token</code> with access_token.
 Parameter | Required | Description | Type
 --------- | ------- | -----------| -----------
 email | optional | new user email address | email
-birth_date | optional | new user birth date | TIMESTAMP
+birth_date | optional | new user birth date | UNIX TIMESTAMP
 interest | optional | new user interest on | Array of String `["a","b","c"]`
-gender | optional | new user gender | MALE/FEMALE/UNKNOWN
+gender | optional | new user gender | 0/1/2
 phone_number | optional | new user phone_number | phone numeber
 name | optional | new user name | String
 bio | optional | new user bio | String
@@ -130,5 +130,13 @@ You can use `json` type on body request
 </aside>
 
 <aside class="notice">
+<code>gender</code> :
+0 : <code>MALE</code>
+1: <code>FEMALE</code>
+2: <code>UNKNOWN</code>
+</aside>
+
+<aside class="notice">
 When you updating phone number user will receive sms verification
 </aside>
+

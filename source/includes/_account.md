@@ -14,7 +14,7 @@
     "_id": "59239a99feb15e3830fd8813",
     "point": 0,
     "interest": [],
-    "gender": "UNKNOWN",
+    "gender": 2,
     "block": 0,
     "following": 0,
     "email": {
@@ -68,7 +68,7 @@ Remember — a happy kitten is an authenticated kitten!
          "apaya",
          "ehh"
        ],
-       "gender": "MALE",
+       "gender": 1,
        "block": 0,
        "following": 0,
        "phone_number": {
@@ -122,7 +122,7 @@ password | true | Password for identifier
       "apaya",
       "ehh"
     ],
-    "gender": "MALE",
+    "gender": 1,
     "block": 0,
     "following": 0,
     "phone_number": {
