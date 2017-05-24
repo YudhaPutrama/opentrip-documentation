@@ -11,6 +11,7 @@ toc_footers:
 includes:
   - account
   - profile
+  - media
   - errors
 
 search: true
