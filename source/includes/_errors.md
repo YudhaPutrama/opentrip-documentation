@@ -54,7 +54,6 @@ REFRESH_TOKEN_REQUIRED | Bad Request -- Need refresh_token
 USER_NOT_FOUND | Not Found -- user not registered
 PARAMETER_REQUIRED | Bad Request -- Need required parameter
 UNKNOWN_ERROR | Error -- unexpected error
-
 SOCIAL_USER_BLOCKED | Bad Request -- user is blocked
 SOCIAL_CANNOT_FOLLOW_YOURSELF | Bad Request -- don't follow yourself
 SOCIAL_CANNOT_UNFOLLOW_YOURSELF | Bad Request -- cannot unfollow yourself
