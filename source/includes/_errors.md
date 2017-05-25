@@ -38,11 +38,15 @@ Error Code | Meaning
 INVALID_EMAIL_ADDRESS | Bad Request -- Your email address is sucks
 INVALID_KEY | Not Found -- Your key no found
 INVALID_TOKEN | Bad Request -- Your token is sucks
+INVALID_TIMESTAMP | Bad Request -- Your timestamps is sucks
+INVALID_GENDER | Bad Request -- Your gender is sucks
+INVALID_PHONE_NUMBER | Bad Request -- Your phone number is sucks
 PASSWORD_TOO_SHORT | Bad Request -- Your password to short
 EMAIL_ADDRESS_NOT_REGISTERED | Not Found -- Email address not registered
 PASSWORD_NOT_MATCH | Bad Request -- Wrong password
 EMAIL_ALREADY_USE | Bad Request -- Email address already registered
 PHONE_NUMBER_ALREADY_USE | Bad Request -- Phone Number already registered
+PHONE_NUMBER_ALREADY_VERIFIED | Bad Request -- Phone Number already verified
 ID_INSTAGRAM_ALREADY_USE | Baf Request -- Instagram id already registered
 USERNAME_INSTAGRAM_ALREADY_USE | Bad Request -- Username alredy registered
 ACCESS_TOKEN_REQUIRED | Bad Request -- Need access_token
@@ -50,5 +54,12 @@ REFRESH_TOKEN_REQUIRED | Bad Request -- Need refresh_token
 USER_NOT_FOUND | Not Found -- user not registered
 PARAMETER_REQUIRED | Bad Request -- Need required parameter
 UNKNOWN_ERROR | Error -- unexpected error
+
+SOCIAL_USER_BLOCKED | Bad Request -- user is blocked
+SOCIAL_CANNOT_FOLLOW_YOURSELF | Bad Request -- don't follow yourself
+SOCIAL_CANNOT_UNFOLLOW_YOURSELF | Bad Request -- cannot unfollow yourself
+SOCIAL_CANNOT_BLOCK_YOURSELF | Bad Request -- You can't block yout self
+SOCIAL_CANNOT_UNBLOCK_YOURSELF | Bad Request -- Also cannot unblock yourself
+
 
 
