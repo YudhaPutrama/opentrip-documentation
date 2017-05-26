@@ -20,7 +20,7 @@ search: true
 
 # Introduction
 
-Welcome to Open Trip API! Use `http://opentrip.trivalier.id:8000` for endpoint host
+Welcome to Open Trip API! Use `http://opentrip.trivalier.id` for endpoint host
 
 
 # Authentication

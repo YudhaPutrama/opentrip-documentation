@@ -28,7 +28,7 @@
 }
 ```
 
-Register a new user using email adn password
+Register a new user using email and password
 
 ### Endpoint
 
