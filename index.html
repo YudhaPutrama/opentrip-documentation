@@ -1369,6 +1369,82 @@ You must replace <code>access_token</code> with access_token.
 </tr>
 </tbody></table>
 
+<h2 id="action-report">Action Report</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>report user, when you report user, you automatically blocking that user.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/social/action/report</code></p>
+
+<h3 id="header">Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+<th>example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>access_token</td>
+<td><code class="prettyprint">Authorization: Bearer &lt;access_token&gt;</code></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>access_token</code> with access_token.
+</aside>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>another user id to report</td>
+</tr>
+<tr>
+<td>reason_code</td>
+<td>true</td>
+<td>reason why user report another user.</td>
+</tr>
+</tbody></table>
+
+<h3 id="reason_code">reason_code</h3>
+
+<table><thead>
+<tr>
+<th>code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>it&rsquo;s spam</td>
+</tr>
+<tr>
+<td>2</td>
+<td>it`s inappropriate</td>
+</tr>
+</tbody></table>
+
           <h1 id="media">Media</h1>
 
 <h2 id="get-credential">Get Credential</h2>
