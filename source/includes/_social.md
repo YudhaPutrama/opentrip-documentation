@@ -273,3 +273,42 @@ You must replace <code>access_token</code> with access_token.
 Parameter | Required | Description
 --------- | ------- | --------
 id | true | another user id to unblock
+
+## Action Report
+
+> Result
+
+```json
+{
+  "error": false
+}
+```
+report user, when you report user, you automatically blocking that user.
+
+### Endpoint
+
+`POST /user/social/action/report`
+
+### Header
+
+Name | Required | Description | example
+--------- | ---------| -----------| -------------
+Authorization | true | access_token | `Authorization: Bearer <access_token>`
+
+<aside class="notice">
+You must replace <code>access_token</code> with access_token.
+</aside>
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | --------
+id | true | another user id to report
+reason_code| true | reason why user report another user.
+
+### reason_code
+
+code | Description
+---- | -----------
+1    | it's spam
+2    | it`s inappropriate
