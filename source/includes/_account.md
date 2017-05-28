@@ -339,3 +339,37 @@ Authorization | true | refresh_token | `Authorization: Bearer <refresh_token>`
 You must replace <code>refresh_token</code> with refresh_token.
 Remember! header is <code>refresh_token</code> , NOT <code>access_token</code>
 </aside>
+
+
+## Delete Account
+
+> Result
+
+```json
+{
+  "error": false,
+}
+```
+
+Deleting using account, password require for deleting account.account will deleted permanent.
+
+### Endpoint
+
+`DELETE /user/account`
+
+### Header
+
+Name | Required | Description | example
+--------- | ---------| -----------| -------------
+Authorization | true | access_token | `Authorization: Bearer <access_token>`
+
+<aside class="notice">
+You must replace <code>access_token</code> with access_token.
+</aside>
+
+### Parameters
+
+Parameter | Required | Description
+--------- | ---------| -----------
+password | true | user current password.
+
