@@ -716,6 +716,59 @@ You must replace <code>refresh_token</code> with refresh_token.
 Remember! header is <code>refresh_token</code> , NOT <code>access_token</code>
 </aside>
 
+<h2 id="delete-account">Delete Account</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Deleting using account, password require for deleting account.account will deleted permanent.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /user/account</code></p>
+
+<h3 id="header">Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+<th>example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>access_token</td>
+<td><code class="prettyprint">Authorization: Bearer &lt;access_token&gt;</code></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>access_token</code> with access_token.
+</aside>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>password</td>
+<td>true</td>
+<td>user current password.</td>
+</tr>
+</tbody></table>
+
           <h1 id="profile">Profile</h1>
 
 <h2 id="get-user-profile">Get User Profile</h2>
