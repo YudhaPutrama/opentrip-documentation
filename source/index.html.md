@@ -13,6 +13,7 @@ includes:
   - profile
   - social
   - media
+  - category
   - errors
 
 search: true
