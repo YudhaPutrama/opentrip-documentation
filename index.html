@@ -1500,7 +1500,7 @@ You must replace <code>access_token</code> with access_token.
 
           <h1 id="media">Media</h1>
 
-<h2 id="get-credential">Get Credential</h2>
+<h2 id="upload-photo-profile">Upload Photo Profile</h2>
 
 <blockquote>
 <p>Success Result</p>
@@ -1508,63 +1508,13 @@ You must replace <code>access_token</code> with access_token.
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"endpoint_url"</span><span class="p">:</span><span class="s2">"https://opentrip-test-1.s3.amazonaws.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"key"</span><span class="p">:</span><span class="s2">"26d585dd7047154130c0ce13af18dfa8.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"acl"</span><span class="p">:</span><span class="s2">"public-read"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"success_action_status"</span><span class="p">:</span><span class="s2">"201"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"policy"</span><span class="p">:</span><span class="s2">"eyJleHBpcmF0aW9uIjoiMjAxNy0wNS0yNFQwNDoyMzoxOS43MTBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoiYnJvd3Nlci11cGxvYWQtZGVtbyJ9LHsia2V5IjoiMjZkNTg1ZGQ3MDQ3MTU0MTMwYzBjZTEzYWYxOGRmYTgucG5nIn0seyJhY2wiOiJwdWJsaWMtcmVhZCJ9LHsic3VjY2Vzc19hY3Rpb25fc3RhdHVzIjoiMjAxIn0sWyJzdGFydHMtd2l0aCIsIiRDb250ZW50LVR5cGUiLCIiXSxbImNvbnRlbnQtbGVuZ3RoLXJhbmdlIiwwLDEwMDBdLHsieC1hbXotYWxnb3JpdGhtIjoiQVdTNC1ITUFDLVNIQTI1NiJ9LHsieC1hbXotY3JlZGVudGlhbCI6IkFLSUFKTTNOUVFLTzNSUldXM1hBLzIwMTcwNTI0L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWRhdGUiOiIyMDE3MDUyNFQwMDAwMDBaIn1dfQ=="</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"content-type"</span><span class="p">:</span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"x-amz-algorithm"</span><span class="p">:</span><span class="s2">"AWS4-HMAC-SHA256"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"x-amz-credential"</span><span class="p">:</span><span class="s2">"AKIAJM3NQQKO3RRWW3XA/20170524/us-east-1/s3/aws4_request"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"x-amz-date"</span><span class="p">:</span><span class="s2">"20170524T000000Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"x-amz-signature"</span><span class="p">:</span><span class="s2">"347fd27b055767e9a4fca7351a4739472025d013b2cf187a2ffa67f4226dffed"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="endpoint">Endpoint</h3>
 
-<p><code class="prettyprint">POST /media/get_credential</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>filename</td>
-<td>true</td>
-<td>name of file &ldquo;foto.png&rdquo;</td>
-</tr>
-<tr>
-<td>content_type</td>
-<td>true</td>
-<td>type of file eg. &ldquo;image/png&rdquo;</td>
-</tr>
-</tbody></table>
-
-<h2 id="upload-media">Upload Media</h2>
-
-<blockquote>
-<p>Result</p>
-</blockquote>
-<pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="nt">&lt;PostResponse&gt;</span>
-    <span class="nt">&lt;Location&gt;</span>https://browser-upload-demo.s3.amazonaws.com/26d585dd7047154130c0ce13af18dfa8.png<span class="nt">&lt;/Location&gt;</span>
-    <span class="nt">&lt;Bucket&gt;</span>browser-upload-demo<span class="nt">&lt;/Bucket&gt;</span>
-    <span class="nt">&lt;Key&gt;</span>26d585dd7047154130c0ce13af18dfa8.png<span class="nt">&lt;/Key&gt;&lt;ETag&gt;</span>"1d24dacdeb40056ae67dc9916dad37c4"<span class="nt">&lt;/ETag&gt;</span>
-<span class="nt">&lt;/PostResponse&gt;</span>
-</code></pre>
-<h3 id="endpoint">Endpoint</h3>
-
-<p><code class="prettyprint">HOST &lt;endpoint-url-from-credentrial&gt;</code></p>
-
-<p><code class="prettyprint">POST /</code></p>
+<p><code class="prettyprint">POST /media/upload/profile</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1578,47 +1528,103 @@ You must replace <code>access_token</code> with access_token.
 <tr>
 <td>file</td>
 <td>true</td>
-<td>name of file &ldquo;foto.png&rdquo;</td>
+<td>file of the image</td>
 </tr>
+</tbody></table>
+
+<h2 id="upload-photo-cover">Upload Photo Cover</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/592face38c13ad294405668bdd6488f85bae3381.jpg"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /media/upload/cover</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
 <tr>
-<td>key</td>
-<td>true</td>
-<td>&lsquo;key&rsquo; from credentitial</td>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
+</thead><tbody>
 <tr>
-<td>acl</td>
+<td>file</td>
 <td>true</td>
-<td>&lsquo;acl&rsquo; from credential</td>
+<td>file of the image</td>
 </tr>
+</tbody></table>
+
+<h2 id="upload-photo-activity">Upload Photo Activity</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/592face38c13ad294405668bdd6488f85bae3381.jpg"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /media/upload/cover</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
 <tr>
-<td>policy</td>
-<td>true</td>
-<td>&lsquo;policy&rsquo; from credentitial</td>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
+</thead><tbody>
 <tr>
-<td>content-type</td>
+<td>file</td>
 <td>true</td>
-<td>&lsquo;content-type&rsquo; from credential</td>
+<td>file of the image</td>
 </tr>
+</tbody></table>
+
+<h2 id="upload-video-cover">Upload Video Cover</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/592face38c13ad294405668bdd6488f85bae3381.mp4"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /media/upload/cover</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
 <tr>
-<td>x-amz-algorithm</td>
-<td>true</td>
-<td>&lsquo;x-amz-algorithm&rsquo; from credential</td>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
+</thead><tbody>
 <tr>
-<td>x-amz-credential</td>
+<td>file</td>
 <td>true</td>
-<td>&lsquo;x-amz-credential&rsquo; from credential</td>
-</tr>
-<tr>
-<td>x-amz-date</td>
-<td>true</td>
-<td>&lsquo;x-amz-date&rsquo; from credential</td>
-</tr>
-<tr>
-<td>x-amz-signature</td>
-<td>true</td>
-<td>&lsquo;x-amz-signature&rsquo; from credential</td>
+<td>file of the image</td>
 </tr>
 </tbody></table>
 
