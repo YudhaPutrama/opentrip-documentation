@@ -116,7 +116,7 @@ email | optional | new user email address | email
 birth_date | optional | new user birth date | UNIX TIMESTAMP
 interest | optional | new user interest on | Array of String `["a","b","c"]`
 gender | optional | new user gender | 0/1/2
-phone_number | optional | new user phone_number | phone numeber
+phone_number | optional | new user phone_number | phone numeber (62 ....)
 name | optional | new user name | String
 bio | optional | new user bio | String
 address | optional | new user address | String
@@ -128,6 +128,11 @@ profile_picture | optional | new user profile photo | Url image adresss
 <aside class="notice">
 You can use `json` type on body request
 </aside>
+
+<aside class="notice">
+example phone_number `6285722244744`
+</aside>
+
 
 <aside class="notice">
 <code>gender</code> :
