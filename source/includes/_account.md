@@ -372,4 +372,18 @@ You must replace <code>access_token</code> with access_token.
 Parameter | Required | Description
 --------- | ---------| -----------
 password | true | user current password.
+reason_code | true | why delete account ?.
+
+### reason_code
+
+code | Description
+---- | -----------
+1    | Trouble getting started
+2    | Created a second account
+3    | Privacy concerns
+4    | Want to remove something
+5    | Too busy/too distracting
+6    | Can't find people to follow
+7    | Too many ads
+something else | why ?
 

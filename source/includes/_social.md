@@ -312,3 +312,4 @@ code | Description
 ---- | -----------
 1    | it's spam
 2    | it`s inappropriate
+something else | why ?
