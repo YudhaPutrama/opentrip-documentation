@@ -1555,6 +1555,10 @@ You must replace <code>access_token</code> with access_token.
 
           <h1 id="media">Media</h1>
 
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
 <h2 id="upload-photo-profile">Upload Photo Profile</h2>
 
 <blockquote>
@@ -1620,6 +1624,71 @@ You must replace <code>access_token</code> with access_token.
 <td>file</td>
 <td>true</td>
 <td>file of the image</td>
+</tr>
+</tbody></table>
+
+<h2 id="upload-image">Upload Image</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/5933658b705c0a671c510acd_b33c20a2b602ecf6.jpg"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>create/upload image.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /media/upload/image</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>true</td>
+<td>file of the image</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-image">Delete Image</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>remove/delete image.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /media/upload/image</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filename</td>
+<td>true</td>
+<td>url image</td>
 </tr>
 </tbody></table>
 
