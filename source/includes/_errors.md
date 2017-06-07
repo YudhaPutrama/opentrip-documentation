@@ -52,6 +52,8 @@ USERNAME_INSTAGRAM_ALREADY_USE | Bad Request -- Username alredy registered
 ACCESS_TOKEN_REQUIRED | Bad Request -- Need access_token
 REFRESH_TOKEN_REQUIRED | Bad Request -- Need refresh_token
 USER_NOT_FOUND | Not Found -- user not registered
+USER_NOT_VERIFIED | User account not verified,
+ACCOUNT_SUSPENDED | User account was suspended
 PARAMETER_REQUIRED | Bad Request -- Need required parameter
 UNKNOWN_ERROR | Error -- unexpected error
 SOCIAL_USER_BLOCKED | Bad Request -- user is blocked
