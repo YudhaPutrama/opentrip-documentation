@@ -14,6 +14,7 @@ includes:
   - social
   - media
   - category
+  - trip
   - errors
 
 search: true

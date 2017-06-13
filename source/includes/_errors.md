@@ -55,6 +55,7 @@ USER_NOT_FOUND | Not Found -- user not registered
 USER_NOT_VERIFIED | User account not verified,
 ACCOUNT_SUSPENDED | User account was suspended
 PARAMETER_REQUIRED | Bad Request -- Need required parameter
+PARAMETER_WRONG | Bad Request -- Need required parameter
 UNKNOWN_ERROR | Error -- unexpected error
 SOCIAL_USER_BLOCKED | Bad Request -- user is blocked
 SOCIAL_CANNOT_FOLLOW_YOURSELF | Bad Request -- don't follow yourself
