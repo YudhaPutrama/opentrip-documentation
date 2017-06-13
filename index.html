@@ -228,7 +228,7 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to Open Trip API! Use <code class="prettyprint">http://api.myopentrip.id</code> for endpoint host</p>
+<p>Welcome to Open Trip API! Use <code class="prettyprint">http://opentrip.trivalier.id</code> for endpoint host</p>
 
 <h1 id="authentication">Authentication</h1>
 
@@ -767,6 +767,53 @@ You must replace <code>access_token</code> with access_token.
 <td>true</td>
 <td>user current password.</td>
 </tr>
+<tr>
+<td>reason_code</td>
+<td>true</td>
+<td>why delete account ?.</td>
+</tr>
+</tbody></table>
+
+<h3 id="reason_code">reason_code</h3>
+
+<table><thead>
+<tr>
+<th>code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Trouble getting started</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Created a second account</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Privacy concerns</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Want to remove something</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Too busy/too distracting</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Can&rsquo;t find people to follow</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Too many ads</td>
+</tr>
+<tr>
+<td>something else</td>
+<td>why ?</td>
+</tr>
 </tbody></table>
 
           <h1 id="profile">Profile</h1>
@@ -939,7 +986,7 @@ You must replace <code>access_token</code> with access_token.
 <td>phone_number</td>
 <td>optional</td>
 <td>new user phone_number</td>
-<td>phone numeber</td>
+<td>phone numeber (62 &hellip;.)</td>
 </tr>
 <tr>
 <td>name</td>
@@ -984,6 +1031,10 @@ You can use `json` type on body request
 </aside>
 
 <aside class="notice">
+example phone_number `6285722244744`
+</aside>
+
+<aside class="notice">
 <code>gender</code> :
 0 : <code>MALE</code>
 1: <code>FEMALE</code>
@@ -993,6 +1044,159 @@ You can use `json` type on body request
 <aside class="notice">
 When you updating phone number user will receive sms verification
 </aside>
+
+<h2 id="upload-photo-profile">Upload Photo Profile</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-04T02:04:59.575Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/5933658b705c0a671c510acd4ab69878b7e6c88f.jpg"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /media/upload/profile</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>true</td>
+<td>file of the image</td>
+</tr>
+</tbody></table>
+
+<h2 id="upload-photo-cover">Upload Photo Cover</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-04T02:04:59.575Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile_cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/5933658b705c0a671c510acd4ab69878b7e6c88f.jpg"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /media/upload/cover</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>true</td>
+<td>file of the image</td>
+</tr>
+</tbody></table>
+
+<h2 id="upload-identity-card">Upload Identity Card</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-04T02:04:59.575Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"identity_card"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"https://url.image"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"verified"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /media/upload/identity_card</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>true</td>
+<td>file of the image</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-photo-profile">Delete Photo Profile</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /media/delete/profile</code></p>
+
+<h2 id="delete-profile-cover">Delete Profile Cover</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /media/delete/cover</code></p>
+
+<h2 id="delete-identity-card">Delete Identity Card</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /media/delete/identity_card</code></p>
 
           <h1 id="social">Social</h1>
 
@@ -1496,25 +1700,35 @@ You must replace <code>access_token</code> with access_token.
 <td>2</td>
 <td>it`s inappropriate</td>
 </tr>
+<tr>
+<td>something else</td>
+<td>why ?</td>
+</tr>
 </tbody></table>
 
           <h1 id="media">Media</h1>
 
-<h2 id="upload-photo-profile">Upload Photo Profile</h2>
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+<h2 id="upload-image">Upload Image</h2>
 
 <blockquote>
 <p>Success Result</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-
-    </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/5933658b705c0a671c510acd_b33c20a2b602ecf6.jpg"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<p>create/upload image.</p>
+
 <h3 id="endpoint">Endpoint</h3>
 
-<p><code class="prettyprint">POST /media/upload/profile</code></p>
+<p><code class="prettyprint">POST /media/upload/image</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1532,21 +1746,20 @@ You must replace <code>access_token</code> with access_token.
 </tr>
 </tbody></table>
 
-<h2 id="upload-photo-cover">Upload Photo Cover</h2>
+<h2 id="delete-image">Delete Image</h2>
 
 <blockquote>
-<p>Result</p>
+<p>Success Result</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/592face38c13ad294405668bdd6488f85bae3381.jpg"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<p>remove/delete image.</p>
+
 <h3 id="endpoint">Endpoint</h3>
 
-<p><code class="prettyprint">POST /media/upload/cover</code></p>
+<p><code class="prettyprint">DELETE /media/upload/image</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1558,73 +1771,9 @@ You must replace <code>access_token</code> with access_token.
 </tr>
 </thead><tbody>
 <tr>
-<td>file</td>
+<td>filename</td>
 <td>true</td>
-<td>file of the image</td>
-</tr>
-</tbody></table>
-
-<h2 id="upload-photo-activity">Upload Photo Activity</h2>
-
-<blockquote>
-<p>Result</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/592face38c13ad294405668bdd6488f85bae3381.jpg"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="endpoint">Endpoint</h3>
-
-<p><code class="prettyprint">POST /media/upload/cover</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>file</td>
-<td>true</td>
-<td>file of the image</td>
-</tr>
-</tbody></table>
-
-<h2 id="upload-video-cover">Upload Video Cover</h2>
-
-<blockquote>
-<p>Result</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/592face38c13ad294405668bdd6488f85bae3381.mp4"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="endpoint">Endpoint</h3>
-
-<p><code class="prettyprint">POST /media/upload/cover</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>file</td>
-<td>true</td>
-<td>file of the image</td>
+<td>url image</td>
 </tr>
 </tbody></table>
 
@@ -1661,207 +1810,226 @@ You must replace <code>access_token</code> with access_token.
 
           <h1 id="trip">Trip</h1>
 
-<h2 id="create">Create</h2>
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+<h2 id="create-trip">Create Trip</h2>
 
 <blockquote>
-<p>Result</p>
+<p>Success Result</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"592face38c13ad294405668b"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"_category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.myopentrip.id/images/trip/23124.jpg"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World Wonder"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Krakatau Volcano"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"meeting_point"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">312.213213</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mf">86.213213</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-10T17:00:00.000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-13T17:00:00.000Z"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T17:00:00.000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-27T17:00:00.000Z"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price_included"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food, Transportation, Accomodation"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price_excluded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transportation from Hometown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"activities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do A Sporting Stag Do in Brimingham"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.myopentrip.id/images/profile/12321.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"hourly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Meetup at Pelabuhan Bakauhuni"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Breakfast and Preparing"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cruising Destination Ideas"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.myopentrip.id/images/profile/12321.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"hourly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Meetup at Pelabuhan Bakauhuni"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Breakfast and Preparing"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do A Sporting Stag Do in Brimingham"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.myopentrip.id/images/profile/12321.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"hourly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Meetup at Pelabuhan Bakauhuni"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Breakfast and Preparing"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cruising Destination Ideas"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.myopentrip.id/images/profile/12321.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"hourly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">25200000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">28800000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Meetup at Pelabuhan Bakauhuni"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">28800000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">32400000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Breakfast and Preparing"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"requirement_equipment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bag, Some precaution money, Medicine"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"important_notice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You have to be able to at least swim, Please bring your ID"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ttt"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"additional_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is additional note"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"important_notice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eh ini important notice"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quota"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"593e7da24d5c58aa6c349d3a"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"activities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tess"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ini gambar"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"593e7da24d5c58aa6c349d3b"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"hourly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"makan-makan"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"593e7da24d5c58aa6c349d3c"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="err">.....</span><span class="w">
+                        </span><span class="err">.....</span><span class="w">
+                        </span><span class="err">.....</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="err">.....</span><span class="w">
+                </span><span class="err">.....</span><span class="w">
+                </span><span class="err">.....</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1970-01-18T07:54:10.267Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1970-01-18T07:54:10.267Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"meeting_point"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name destination"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-6.9739024</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mf">107.627451</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">.....</span><span class="w">
+        </span><span class="err">.....</span><span class="w">
+        </span><span class="err">.....</span><span class="w">
+        </span><span class="err">.....</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Create trip</p>
+<p>creating new trip.</p>
 
 <h3 id="endpoint">Endpoint</h3>
 
 <p><code class="prettyprint">POST /trip/create</code></p>
 
-<h3 id="query-parameters">Query Parameters</h3>
+<aside class="notice">
+Remember — User must be verified to make trip
+</aside>
+
+<aside class="notice">
+Use JSON body request
+</aside>
+
+<h3 id="body-request">Body request</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>name</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
+<td>category</td>
+<td>true</td>
+<td>trip category</td>
+</tr>
+<tr>
 <td>main_image</td>
 <td>true</td>
-<td>String</td>
+<td>main header image</td>
 </tr>
 <tr>
 <td>title</td>
 <td>true</td>
-<td>String</td>
+<td>trip title</td>
 </tr>
 <tr>
 <td>description</td>
 <td>true</td>
-<td>String</td>
+<td>trip description</td>
 </tr>
 <tr>
 <td>destination</td>
 <td>true</td>
-<td>String</td>
+<td>trip destination</td>
 </tr>
 <tr>
-<td>meeting_point_lat</td>
+<td>meeting_point</td>
 <td>true</td>
-<td>Number</td>
+<td>where meeting point</td>
 </tr>
 <tr>
-<td>meeting_point_long</td>
+<td>date</td>
 <td>true</td>
-<td>Number</td>
-</tr>
-<tr>
-<td>dates</td>
-<td>true</td>
-<td>Array in Array [[&ldquo;11-05-2017&rdquo;,&ldquo;14-05-2017&rdquo;],[&ldquo;25-05-2017&rdquo;,&ldquo;28-05-2017&rdquo;]]</td>
-</tr>
-<tr>
-<td>price</td>
-<td>true</td>
-<td>Number</td>
-</tr>
-<tr>
-<td>price_included</td>
-<td>true</td>
-<td>String</td>
-</tr>
-<tr>
-<td>price_excluded</td>
-<td>true</td>
-<td>String</td>
+<td>time to trip,use unix timestamp</td>
 </tr>
 <tr>
 <td>is_public</td>
 <td>true</td>
-<td>Boolean</td>
+<td>is trip public</td>
+</tr>
+<tr>
+<td>quota</td>
+<td>true</td>
+<td>trip quota</td>
+</tr>
+<tr>
+<td>price</td>
+<td>true</td>
+<td>trip prize</td>
+</tr>
+<tr>
+<td>price_included</td>
+<td>true</td>
+<td>price included</td>
+</tr>
+<tr>
+<td>price_excluded</td>
+<td>true</td>
+<td>price excluded</td>
 </tr>
 <tr>
 <td>activities</td>
 <td>true</td>
-<td>Array Object Activity</td>
+<td>trip activities</td>
 </tr>
 <tr>
 <td>requirement_equipment</td>
 <td>true</td>
-<td>String</td>
+<td>price excluded</td>
+</tr>
+<tr>
+<td>additional_note</td>
+<td>false</td>
+<td>additional note</td>
 </tr>
 <tr>
 <td>important_notice</td>
-<td>true</td>
-<td>String</td>
+<td>false</td>
+<td>important notice</td>
 </tr>
 </tbody></table>
 
-<p>Object Activity</p>
+<p><code class="prettyprint">see example request</code></p>
+
+<blockquote>
+<p>Example Body Request</p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do A Sporting Stag Do in Brimingham"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.myopentrip.id/images/profile/12321.jpg"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"hourly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">[</span><span class="s2">"07:00"</span><span class="p">,</span><span class="s2">"08:00"</span><span class="p">,</span><span class="s2">"Meetup at Pelabuhan Bakauhuni"</span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="s2">"08:00"</span><span class="p">,</span><span class="s2">"09:00"</span><span class="p">,</span><span class="s2">"Breakfast and Preparing"</span><span class="p">]</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"main_image"</span><span class="p">:</span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"ttt"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"destination"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"name destination"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="mf">-6.9739024</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"long"</span><span class="p">:</span><span class="mf">107.627451</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"meeting_point"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"name destination"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="mf">-6.9739024</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"long"</span><span class="p">:</span><span class="mf">107.627451</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"start"</span><span class="p">:</span><span class="mi">1497250267</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end"</span><span class="p">:</span><span class="mi">1497250267</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"start"</span><span class="p">:</span><span class="mi">1497250267</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end"</span><span class="p">:</span><span class="mi">1497250267</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"is_public"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quota"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="mi">40000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_included"</span><span class="p">:</span><span class="s2">"aaa,aaa,aa,"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_excluded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbb,bbb,bbb,"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"activities"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"tess"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"image"</span><span class="p">:</span><span class="s2">"ini gambar"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hourly"</span><span class="p">:[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start"</span><span class="p">:</span><span class="s2">"07.00"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08.00"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"makan-makan"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"requirement_equipment"</span><span class="p">:</span><span class="s2">"halah"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"additional_note"</span><span class="p">:</span><span class="s2">"this is additional note"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"important_notice"</span><span class="p">:</span><span class="s2">"eh ini important notice"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>You can use http://www.jsonschema2pojo.org/ for conver from json to java object</p>
-
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">
@@ -2006,7 +2174,19 @@ This is error handling
 <td>Not Found &ndash; user not registered</td>
 </tr>
 <tr>
+<td>USER_NOT_VERIFIED</td>
+<td>User account not verified,</td>
+</tr>
+<tr>
+<td>ACCOUNT_SUSPENDED</td>
+<td>User account was suspended</td>
+</tr>
+<tr>
 <td>PARAMETER_REQUIRED</td>
+<td>Bad Request &ndash; Need required parameter</td>
+</tr>
+<tr>
+<td>PARAMETER_WRONG</td>
 <td>Bad Request &ndash; Need required parameter</td>
 </tr>
 <tr>
