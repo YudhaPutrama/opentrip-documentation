@@ -41,6 +41,7 @@ INVALID_TOKEN | Bad Request -- Your token is sucks
 INVALID_TIMESTAMP | Bad Request -- Your timestamps is sucks
 INVALID_GENDER | Bad Request -- Your gender is sucks
 INVALID_PHONE_NUMBER | Bad Request -- Your phone number is sucks
+INVALID_DATE_TRIP | aha -- tanggal trip sama(start&end) atau tanggal tidak lebih dari 6 hari dari tanggal hari itu
 PASSWORD_TOO_SHORT | Bad Request -- Your password to short
 EMAIL_ADDRESS_NOT_REGISTERED | Not Found -- Email address not registered
 PASSWORD_NOT_MATCH | Bad Request -- Wrong password
@@ -51,6 +52,9 @@ ID_INSTAGRAM_ALREADY_USE | Baf Request -- Instagram id already registered
 USERNAME_INSTAGRAM_ALREADY_USE | Bad Request -- Username alredy registered
 ACCESS_TOKEN_REQUIRED | Bad Request -- Need access_token
 REFRESH_TOKEN_REQUIRED | Bad Request -- Need refresh_token
+INTEREST_ARRAY_REQUIRED | Bad Request -- array cuy
+ALREADY_EXISTS | sudah ada
+NOT_FOUND | not found
 USER_NOT_FOUND | Not Found -- user not registered
 USER_NOT_VERIFIED | User account not verified,
 ACCOUNT_SUSPENDED | User account was suspended
