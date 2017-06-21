@@ -156,3 +156,273 @@ important_notice | false | important notice
 
 
 
+## Get Trip by Category
+> Success Result
+
+```json
+{
+    "error": false,
+    "data": [
+        {
+            "_id": "594a148eb28f952b64f87b9d",
+            "_author": {
+                "_id": "5933658b705c0a671c510acd",
+                "name": "paijo",
+                "profile_picture" : "http://alamat"
+                "rating":{
+                       "point":4.5,
+                       "count":12
+                 }
+            },
+            "main_image": "https:///tes",
+            "title": "tes",
+            "price": 40000
+        },
+        {
+            "_id": "594a14e8b28f952b64f87ba0",
+            "_author": {
+                "_id": "5933658b705c0a671c510acd",
+                "name": "paijo",
+                "profile_picture" : "http://alamat",
+                "rating":{
+                       "point":4.5,
+                       "count":12
+                 }
+            },
+            "main_image": "https:///tes",
+            "title": "tes",
+            "price": 40000
+        },
+        ...
+        ...
+        ...
+    ]
+}
+```
+
+get trip by category.
+
+### Endpoint
+
+`GET /trip/by_category`
+
+### Query Parameters
+Parameter | Required | Example
+--------- | ------- | -----------
+category  | true    | `sport`
+offset    | false   | `1` default offset is `0`
+limit     | false   | `10` default limit is `10`
+sort      | false   | `date.start` default is `date.start` `sort` could be anything
+
+
+## Get Trip by Explore
+> Success Result
+
+```json
+{
+    "error": false,
+    "data": [
+        {
+            "_id": "594a148eb28f952b64f87b9d",
+            "_author": {
+                "_id": "5933658b705c0a671c510acd",
+                "name": "paijo",
+                "profile_picture" : "http://alamat"
+                "rating":{
+                       "point":4.5,
+                       "count":12
+                 }
+            },
+            "main_image": "https:///tes",
+            "title": "tes",
+            "price": 40000
+        },
+        {
+            "_id": "594a14e8b28f952b64f87ba0",
+            "_author": {
+                "_id": "5933658b705c0a671c510acd",
+                "name": "paijo",
+                "profile_picture" : "http://alamat",
+                "rating":{
+                       "point":4.5,
+                       "count":12
+                 }
+            },
+            "main_image": "https:///tes",
+            "title": "tes",
+            "price": 40000
+        },
+        ...
+        ...
+        ...
+    ]
+}
+```
+
+get trip by explore.
+
+### Endpoint
+
+`GET /trip/by_explore`
+
+### Query Parameters
+Parameter | Required | Example
+--------- | ------- | -----------
+offset    | false   | `0` default offset is `0`
+limit     | false   | `10` default limit is `10`
+sort      | false   | `createdAt` default is `createdAt` `sort` could be anything
+
+
+## Get Trip by Author
+> Success Result
+
+```json
+{
+    "error": false,
+    "data": [
+        {
+            "_id": "594a148eb28f952b64f87b9d",
+            "main_image": "https:///tes",
+            "title": "tes",
+            "price": 40000
+        },
+        {
+            "_id": "594a14e8b28f952b64f87ba0",
+            "main_image": "https:///tes",
+            "title": "tes",
+            "price": 40000
+        },
+        ...
+        ...
+        ...
+    ]
+}
+```
+
+get trip by author, or user who created the trip.
+
+### Endpoint
+
+`GET /trip/by_user`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+id        | true    | user id
+offset    | false   | `0` default offset is `0`
+limit     | false   | `10` default limit is `10`
+sort      | false   | `-createdAt` default is `-createdAt` `sort` could be anything
+
+
+## Get Detail Trip
+> Success Result
+
+```json
+{
+    "error": false,
+    "data": {
+        "_id": "594a148eb28f952b64f87b9d",
+        "_author": {
+            "_id": "5933658b705c0a671c510acd",
+            "name": "paijo",
+            "profile_picture" : "http://alamat"
+            "rating":{
+                   "point":4.5,
+                   "count":12
+             }
+        },
+        "_category": "sport",
+        "main_image": "https:///tes",
+        "title": "tes",
+        "description": "ttt",
+        "additional_note": "this is additional note",
+        "important_notice": "eh ini important notice",
+        "is_public": false,
+        "quota": 5,
+        "price": 40000,
+        "__v": 0,
+        "joined_user": 0,
+        "activities": [
+            {
+                "title": "tess",
+                "image": "ini gambar",
+                "_id": "594a148eb28f952b64f87b9e",
+                "hourly": [
+                    {
+                        "start": "07.00",
+                        "end": "08.00",
+                        "activity": "makan-makan",
+                        "_id": "594a148eb28f952b64f87b9f"
+                    }
+                ]
+            }
+        ],
+        "date": {
+            "start": "2017-06-29T00:00:00.000Z",
+            "end": "2017-07-01T00:00:00.000Z"
+        },
+        "meeting_point": {
+            "name": "name destination",
+            "lat": -6.9739024,
+            "long": 107.627451
+        },
+        "destination": {
+            "name": "name destination",
+            "lat": -6.9739024,
+            "long": 107.627451
+        }
+    }
+}
+```
+
+get detail data of trip
+
+### Endpoint
+
+`GET /trip/detail`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+id        | true    | trip id
+
+
+## Get Joined User of Trip
+> Success Result
+
+```json
+{
+    "error": false,
+    "data": [
+      {
+           "_id": "5923cfc450434044b836c3b8",
+           "profile_picture": "image url profile picture",
+           "name": "arizal"
+         },
+         {
+           "_id": "592510f6f856d02284b2f44b",
+           "profile_picture": "image url profile picture"
+           "name": "bibibi testititititi"
+         },
+         {
+           "_id": "59251006f856d02284b2f44a",
+           "profile_picture": "image url profile picture"
+           "name": "testititititi"
+         }
+    ]
+}
+```
+
+getting joined user of the trip
+
+### Endpoint
+
+`GET /trip/detail/joined_user`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+id        | true    | trip id
+offset    | false   | `0` default offset is `0`
+limit     | false   | `10` default limit is `15`
+
