@@ -2030,6 +2030,367 @@ Use JSON body request
     </span><span class="s2">"important_notice"</span><span class="p">:</span><span class="s2">"eh ini important notice"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<h2 id="get-trip-by-category">Get Trip by Category</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594a148eb28f952b64f87b9d"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paijo"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"profile_picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://alamat"</span><span class="w">
+                </span><span class="s2">"rating"</span><span class="p">:{</span><span class="w">
+                       </span><span class="s2">"point"</span><span class="p">:</span><span class="mf">4.5</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">12</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594a14e8b28f952b64f87ba0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paijo"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"profile_picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://alamat"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rating"</span><span class="p">:{</span><span class="w">
+                       </span><span class="s2">"point"</span><span class="p">:</span><span class="mf">4.5</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">12</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get trip by category.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /trip/by_category</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>category</td>
+<td>true</td>
+<td><code class="prettyprint">sport</code></td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">1</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">10</code> default limit is <code class="prettyprint">10</code></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td><code class="prettyprint">date.start</code> default is <code class="prettyprint">date.start</code> <code class="prettyprint">sort</code> could be anything</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-trip-by-explore">Get Trip by Explore</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594a148eb28f952b64f87b9d"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paijo"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"profile_picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://alamat"</span><span class="w">
+                </span><span class="s2">"rating"</span><span class="p">:{</span><span class="w">
+                       </span><span class="s2">"point"</span><span class="p">:</span><span class="mf">4.5</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">12</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594a14e8b28f952b64f87ba0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paijo"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"profile_picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://alamat"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rating"</span><span class="p">:{</span><span class="w">
+                       </span><span class="s2">"point"</span><span class="p">:</span><span class="mf">4.5</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">12</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get trip by explore.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /trip/by_explore</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">0</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">10</code> default limit is <code class="prettyprint">10</code></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td><code class="prettyprint">createdAt</code> default is <code class="prettyprint">createdAt</code> <code class="prettyprint">sort</code> could be anything</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-trip-by-author">Get Trip by Author</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594a148eb28f952b64f87b9d"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594a14e8b28f952b64f87ba0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get trip by author, or user who created the trip.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /trip/by_user</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>user id</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">0</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">10</code> default limit is <code class="prettyprint">10</code></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td><code class="prettyprint">-createdAt</code> default is <code class="prettyprint">-createdAt</code> <code class="prettyprint">sort</code> could be anything</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-detail-trip">Get Detail Trip</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594a148eb28f952b64f87b9d"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5933658b705c0a671c510acd"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paijo"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"profile_picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://alamat"</span><span class="w">
+            </span><span class="s2">"rating"</span><span class="p">:{</span><span class="w">
+                   </span><span class="s2">"point"</span><span class="p">:</span><span class="mf">4.5</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">12</span><span class="w">
+             </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sport"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ttt"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"additional_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is additional note"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"important_notice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eh ini important notice"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quota"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"joined_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"activities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tess"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ini gambar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594a148eb28f952b64f87b9e"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hourly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07.00"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08.00"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"makan-makan"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594a148eb28f952b64f87b9f"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-29T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-01T00:00:00.000Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"meeting_point"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name destination"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-6.9739024</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mf">107.627451</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name destination"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-6.9739024</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mf">107.627451</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get detail data of trip</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /trip/detail</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>trip id</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-joined-user-of-trip">Get Joined User of Trip</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+           </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5923cfc450434044b836c3b8"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image url profile picture"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+           </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"592510f6f856d02284b2f44b"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image url profile picture"</span><span class="w">
+           </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bibibi testititititi"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+           </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59251006f856d02284b2f44a"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image url profile picture"</span><span class="w">
+           </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testititititi"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>getting joined user of the trip</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /trip/detail/joined_user</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>trip id</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">0</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">10</code> default limit is <code class="prettyprint">15</code></td>
+</tr>
+</tbody></table>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">
@@ -2130,6 +2491,10 @@ This is error handling
 <td>Bad Request &ndash; Your phone number is sucks</td>
 </tr>
 <tr>
+<td>INVALID_DATE_TRIP</td>
+<td>aha &ndash; tanggal trip sama(start&amp;end) atau tanggal tidak lebih dari 6 hari dari tanggal hari itu</td>
+</tr>
+<tr>
 <td>PASSWORD_TOO_SHORT</td>
 <td>Bad Request &ndash; Your password to short</td>
 </tr>
@@ -2168,6 +2533,18 @@ This is error handling
 <tr>
 <td>REFRESH_TOKEN_REQUIRED</td>
 <td>Bad Request &ndash; Need refresh_token</td>
+</tr>
+<tr>
+<td>INTEREST_ARRAY_REQUIRED</td>
+<td>Bad Request &ndash; array cuy</td>
+</tr>
+<tr>
+<td>ALREADY_EXISTS</td>
+<td>sudah ada</td>
+</tr>
+<tr>
+<td>NOT_FOUND</td>
+<td>not found</td>
 </tr>
 <tr>
 <td>USER_NOT_FOUND</td>
