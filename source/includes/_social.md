@@ -313,3 +313,124 @@ code | Description
 1    | it's spam
 2    | it`s inappropriate
 something else | why ?
+
+## Action Review
+
+> Result
+
+```json
+{
+    "error": false,
+    "data": {
+        "point": 3,
+        "from": "594b57fac0f7361678bbec5b",
+        "to": "594b5978c0f7361678bbec60",
+        "comment": "aa payah",
+        "_id": "594b598ac0f7361678bbec61"
+    }
+}
+```
+review another user
+
+### Endpoint
+
+`POST /user/social/action/review`
+
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | --------
+id | true | another user id to review
+point | true | point rating `0` to `5`
+comment | optional | review comment
+
+## Get User Review
+
+> Result
+
+```json
+{
+    "error": false,
+    "data": [
+        {
+            "_id": "594b598ac0f7361678bbec61",
+            "updatedAt": "2017-06-22T05:45:46.662Z",
+            "createdAt": "2017-06-22T05:45:46.662Z",
+            "point": 3,
+            "from": {
+                "_id": "594b57fac0f7361678bbec5b",
+                "name": "arizal",
+                "profile_picture": "https://alamat"
+            },
+            "to": "594b5978c0f7361678bbec60",
+            "comment": "aa payah",
+            "__v": 0
+        },
+        {
+            "_id": "594b598ac0f7361678bbec61",
+            "updatedAt": "2017-06-22T05:45:46.662Z",
+            "createdAt": "2017-06-22T05:45:46.662Z",
+            "point": 3,
+            "from": {
+                "_id": "594b57fac0f7361678bbec5b",
+                "name": "arizal"
+                "profile_picture": "https://alamat"
+            },
+            "to": "594b5978c0f7361678bbec60",
+            "comment": "aa payah",
+            "__v": 0
+        }
+        ...
+        ...
+        ...
+    ]
+}
+```
+get user review data
+
+### Endpoint
+
+`GET /user/social/review`
+
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | --------
+id | true | id user untuk diambil reviewnya
+sort | optional | `createdAt` is default sort
+limit | optional | `10` is default limit
+offset | optional | `0` is default offset
+
+## Get My Review
+
+> Result
+
+```json
+{
+    "error": false,
+    "data": {
+        "_id": "594b598ac0f7361678bbec61",
+        "updatedAt": "2017-06-22T05:45:46.662Z",
+        "createdAt": "2017-06-22T05:45:46.662Z",
+        "point": 3,
+        "from": "594b57fac0f7361678bbec5b",
+        "to": "594b5978c0f7361678bbec60",
+        "comment": "aa payah",
+        "__v": 0
+    }
+}
+```
+get user review to another user.
+
+### Endpoint
+
+`GET /user/social/my_review`
+
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | --------
+id | true | id user untuk diambil reviewnya
