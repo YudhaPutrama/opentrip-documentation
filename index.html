@@ -1976,6 +1976,66 @@ Remember — a happy kitten is an authenticated kitten!
 
 <p><code class="prettyprint">GET /category</code></p>
 
+<h1 id="banner">Banner</h1>
+
+<h2 id="get-banner">Get Banner</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"image"</span><span class="p">:</span><span class="s2">"https://aws.imageurl"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"NEW_FEATURE"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"url info kalau ada"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"image"</span><span class="p">:</span><span class="s2">"https://aws.imageurl"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"TRIP_PROMO"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"ini id trip yang dipromooin"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"image"</span><span class="p">:</span><span class="s2">"https://aws.imageurl"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"INFO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"url info mungkin kalau ada"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Getting Home Banner</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /banner</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sort</td>
+<td>optional</td>
+<td>default <code class="prettyprint">createdAt</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>optional</td>
+<td>default <code class="prettyprint">4</code></td>
+</tr>
+<tr>
+<td>offset</td>
+<td>optional</td>
+<td>default <code class="prettyprint">0</code></td>
+</tr>
+</tbody></table>
+
           <h1 id="trip">Trip</h1>
 
 <aside class="success">
