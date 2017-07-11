@@ -108,11 +108,7 @@ important_notice | false | important notice
 	"main_image":"https:///tes",
 	"title":"tes",
 	"description":"ttt",
-	"destination":{
-		"name":"name destination",
-		"lat":-6.9739024,
-		"long":107.627451
-	},
+	"destination":"name of destination",
 	"meeting_point":{
 		"name":"name destination",
 		"lat":-6.9739024,
