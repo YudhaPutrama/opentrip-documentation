@@ -362,11 +362,7 @@ sort      | false   | `-createdAt` default is `-createdAt` `sort` could be anyth
             "lat": -6.9739024,
             "long": 107.627451
         },
-        "destination": {
-            "name": "name destination",
-            "lat": -6.9739024,
-            "long": 107.627451
-        }
+        "destination": "name of destination"
     }
 }
 ```
