@@ -15,6 +15,7 @@ includes:
   - media
   - category
   - trip
+  - activity
   - errors
 
 search: true
