@@ -2611,6 +2611,1421 @@ Use JSON body request
 </tr>
 </tbody></table>
 
+          <h1 id="activity">Activity</h1>
+
+<h2 id="create-new-posting">Create New Posting</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATUS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"http://imageurl"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>creating new posting/activity</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p>`POST /user/activity/posting</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>true</td>
+<td>&ldquo;CHECK_IN&rdquo;,&ldquo;BOOK_TRIP&rdquo;,&ldquo;STATUS&rdquo;</td>
+<td>type of posting ,remember use that type</td>
+</tr>
+<tr>
+<td>text</td>
+<td>false</td>
+<td>&ldquo;i am happy at #pahawang&rdquo;</td>
+<td>user text status</td>
+</tr>
+<tr>
+<td>photos</td>
+<td>false</td>
+<td>[&ldquo;https:img./s/s&rdquo;,&ldquo;https:/ssss&rdquo;]</td>
+<td>user photo of status, user array</td>
+</tr>
+<tr>
+<td>location</td>
+<td>false</td>
+<td>-</td>
+<td>user location, see example request</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>false</td>
+<td><code class="prettyprint">array of user id</code></td>
+<td>user tag, see example request</td>
+</tr>
+<tr>
+<td>trip</td>
+<td>false</td>
+<td><code class="prettyprint">array of trip id</code></td>
+<td>user trip, see example request</td>
+</tr>
+</tbody></table>
+
+<h3 id="type-of-posting">Type Of Posting</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CHECK_IN</td>
+<td>Check In location, location parameter required</td>
+</tr>
+<tr>
+<td>BOOK_TRIP</td>
+<td>Share booked Trip , trip parameter required</td>
+</tr>
+<tr>
+<td>STATUS</td>
+<td>User status (text,photos,etc)</td>
+</tr>
+</tbody></table>
+
+<p><code class="prettyprint">user json request</code></p>
+
+<blockquote>
+<p>Example Body Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"STATUS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="s2">"http://imageurl"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"location"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-3434234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"long"</span><span class="p">:</span><span class="s2">"17000000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"tag"</span><span class="p">:[</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"CHECK_IN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-3434234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"long"</span><span class="p">:</span><span class="s2">"17000000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"BOOK_TRIP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="s2">"http://imageurl"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"location"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-3434234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"long"</span><span class="p">:</span><span class="s2">"17000000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"tag"</span><span class="p">:[</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"trip"</span><span class="p">:[</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<h2 id="update-posting">Update Posting</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f70d7abed889cc3eb34a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:07:34.159Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:29:01.238Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATUS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baruuu test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"http://imageurl"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>updating posting/activity</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p>`PUT /user/activity/update_posting</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>true</td>
+<td>&ldquo;CHECK_IN&rdquo;,&ldquo;BOOK_TRIP&rdquo;,&ldquo;STATUS&rdquo;</td>
+<td>type of posting ,remember use that type</td>
+</tr>
+<tr>
+<td>text</td>
+<td>false</td>
+<td>&ldquo;i am happy at #pahawang&rdquo;</td>
+<td>user text status</td>
+</tr>
+<tr>
+<td>photos</td>
+<td>false</td>
+<td>[&ldquo;https:img./s/s&rdquo;,&ldquo;https:/ssss&rdquo;]</td>
+<td>user photo of status, user array</td>
+</tr>
+<tr>
+<td>location</td>
+<td>false</td>
+<td>-</td>
+<td>user location, see example request</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>false</td>
+<td><code class="prettyprint">array of user id</code></td>
+<td>user tag, see example request</td>
+</tr>
+<tr>
+<td>trip</td>
+<td>false</td>
+<td><code class="prettyprint">array of trip id</code></td>
+<td>user trip, see example request</td>
+</tr>
+</tbody></table>
+
+<h3 id="type-of-posting">Type Of Posting</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CHECK_IN</td>
+<td>Check In location, location parameter required</td>
+</tr>
+<tr>
+<td>BOOK_TRIP</td>
+<td>Share booked Trip , trip parameter required</td>
+</tr>
+<tr>
+<td>STATUS</td>
+<td>User status (text,photos,etc)</td>
+</tr>
+</tbody></table>
+
+<p><code class="prettyprint">user json request</code></p>
+
+<blockquote>
+<p>Example Body Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"STATUS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="s2">"http://imageurl"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"location"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-3434234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"long"</span><span class="p">:</span><span class="s2">"17000000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"tag"</span><span class="p">:[</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"CHECK_IN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-3434234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"long"</span><span class="p">:</span><span class="s2">"17000000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"BOOK_TRIP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="s2">"http://imageurl"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"location"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-3434234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"long"</span><span class="p">:</span><span class="s2">"17000000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"tag"</span><span class="p">:[</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"trip"</span><span class="p">:[</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<h2 id="delete-posting">Delete Posting</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>deleting user posting</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /user/activity/delete_posting</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of post id</td>
+</tr>
+</tbody></table>
+
+<h2 id="action-like">Action Like</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>liking user posting</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/activity/like</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of post id</td>
+</tr>
+</tbody></table>
+
+<h2 id="action-cancel-like">Action Cancel Like</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>canceling like on user posting</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/activity/unlike</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of post id</td>
+</tr>
+</tbody></table>
+
+<h2 id="action-share">Action Share</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>sharing user posting</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/activity/share</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of post id</td>
+</tr>
+<tr>
+<td>text</td>
+<td>false</td>
+<td>&ldquo;i am happy at #pahawang&rdquo;</td>
+</tr>
+<tr>
+<td>photos</td>
+<td>false</td>
+<td>[&ldquo;https:img./s/s&rdquo;,&ldquo;https:/ssss&rdquo;]</td>
+</tr>
+<tr>
+<td>location</td>
+<td>false</td>
+<td>see example request</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>false</td>
+<td><code class="prettyprint">array of user id</code></td>
+</tr>
+<tr>
+<td>trip</td>
+<td>false</td>
+<td><code class="prettyprint">array of trip id</code></td>
+</tr>
+</tbody></table>
+
+<h2 id="do-comment">Do Comment</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:46:08.897Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:46:08.897Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baguusss,suka deeh"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5968307081cced1504912f51"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>do comment on user posting</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/activity/comment</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of post id</td>
+</tr>
+<tr>
+<td>text</td>
+<td>true</td>
+<td>comment text</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-comment">Update Comment</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5968307081cced1504912f51"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:50:34.038Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:46:08.897Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baguusss,suka deeh,eh iya bagus"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>updating user comment</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">PUT /user/activity/update_comment</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>comment_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of post id</td>
+</tr>
+<tr>
+<td>text</td>
+<td>true</td>
+<td>comment text</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-comment">Delete Comment</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>deleting user comment</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /user/activity/delete_comment</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>comment_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of post id</td>
+</tr>
+</tbody></table>
+
+<h2 id="hide-user-post">Hide User Post</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>hide user postings</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/activity/hide_post</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of another user</td>
+</tr>
+</tbody></table>
+
+<h2 id="hide-user-post">Hide User Post</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>hide user postings</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/activity/hide_post</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of another user</td>
+</tr>
+</tbody></table>
+
+<h2 id="show-user-post-undo-hide">Show User Post (Undo Hide)</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>showing another user post or undo hiding user postings</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/activity/show_post</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of another user</td>
+</tr>
+</tbody></table>
+
+<h2 id="action-report-posting">Action Report Posting</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>report user posting</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/activity/report_post</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_id</td>
+<td>true</td>
+<td>post id to report</td>
+</tr>
+<tr>
+<td>reason_code</td>
+<td>true</td>
+<td>reason why reported</td>
+</tr>
+</tbody></table>
+
+<h3 id="reason_code">reason_code</h3>
+
+<table><thead>
+<tr>
+<th>code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>it&rsquo;s spam</td>
+</tr>
+<tr>
+<td>2</td>
+<td>it`s inappropriate</td>
+</tr>
+<tr>
+<td>something else</td>
+<td>why ?</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-feed-posting">Get Feed (Posting)</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"596836590a345e30bc335c2f"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.824Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.824Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"posting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.830Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATUS"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"http://imageurl"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"share_from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHARE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baguusss,suka deeh"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_like"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.830Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATUS"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"http://imageurl"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_like"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.830Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHECK_IN"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_like"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.830Z"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOOK_TRIP"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                            </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">],</span><span class="w">
+                            </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"http://imageurl"</span><span class="w">
+                            </span><span class="p">],</span><span class="w">
+                            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"is_like"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>getting another user feed who follow</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/activity/get_posting</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">1</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">15</code> default limit is <code class="prettyprint">15</code></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td><code class="prettyprint">-createdAt</code> default is <code class="prettyprint">-createdAt</code> <code class="prettyprint">sort</code> could be anything</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-feed-posting-by-author">Get Feed (Posting) By Author</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"596836590a345e30bc335c2f"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.824Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.824Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"posting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.830Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATUS"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"http://imageurl"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"share_from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHARE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baguusss,suka deeh"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_like"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.830Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATUS"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"http://imageurl"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_like"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.830Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHECK_IN"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_like"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.830Z"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOOK_TRIP"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                            </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">],</span><span class="w">
+                            </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"http://imageurl"</span><span class="w">
+                            </span><span class="p">],</span><span class="w">
+                            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"is_like"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>getting another user feed by who created</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/activity/get_by_author</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of user</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">1</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">15</code> default limit is <code class="prettyprint">15</code></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td><code class="prettyprint">-createdAt</code> default is <code class="prettyprint">-createdAt</code> <code class="prettyprint">sort</code> could be anything</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-single-post">Get Single Post</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T03:11:21.830Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T04:26:12.778Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATUS"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahhh.. enaknya"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"trip"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                        </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"http://imageurl"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"http://imageurl"</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pahawang"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3434234</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mi">17000000</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"share"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"like"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"is_like"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>getting single user post</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/activity/get_single_posting</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of posting</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-post-comment">Get Post Comment</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5968457ea2a4b32db8b3d12e"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T04:15:58.299Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T04:15:58.299Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yuhhuuu"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59684585a2a4b32db8b3d12f"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T04:16:05.326Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T04:16:05.326Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"its great"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>getting user comment</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/activity/get_comment</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of posting</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">1</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">15</code> default limit is <code class="prettyprint">15</code></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td><code class="prettyprint">createdAt</code> default is <code class="prettyprint">createdAt</code> <code class="prettyprint">sort</code> could be anything</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-who-likes">Get Who Likes</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59682e9781cced1504912f50"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:41:01.208Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:38:15.412Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sssss"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59682e9781cced1504912f50"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:41:01.208Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:38:15.412Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paijo"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sssss"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>getting who like post</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/activity/get_who_likes</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of posting</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">1</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">15</code> default limit is <code class="prettyprint">10</code></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td><code class="prettyprint">createdAt</code> default is <code class="prettyprint">createdAt</code> <code class="prettyprint">sort</code> could be anything</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-who-share">Get Who Share</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59682e9781cced1504912f50"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:41:01.208Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:38:15.412Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sssss"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59682e9781cced1504912f50"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:41:01.208Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T02:38:15.412Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966f6647abed889cc3eb349"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5966e6c423c15b84140313ea"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paijo"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sssss"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>getting who share post</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/activity/get_who_share</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_id</td>
+<td>true</td>
+<td><code class="prettyprint">_id</code> of posting</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">1</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">15</code> default limit is <code class="prettyprint">10</code></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td><code class="prettyprint">createdAt</code> default is <code class="prettyprint">createdAt</code> <code class="prettyprint">sort</code> could be anything</td>
+</tr>
+</tbody></table>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">
