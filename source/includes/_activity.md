@@ -42,7 +42,7 @@ creating new posting/activity
 
 ### Endpoint
 
-`POST /user/activity/posting
+`POST /user/activity/posting`
 
 ### Parameters
 
@@ -148,7 +148,7 @@ updating posting/activity
 
 ### Endpoint
 
-`PUT /user/activity/update_posting
+`PUT /user/activity/update_posting`
 
 ### Parameters
 
