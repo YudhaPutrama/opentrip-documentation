@@ -149,6 +149,221 @@ important_notice | false | important notice
 ```
 
 
+## Get Popular Trip
+> Success Result
+
+```json
+{
+    "error": false,
+    "data": [
+        {
+            "group": "Gunung Semeru",
+            "trips": [
+                {
+                    "_id": "5974e32779595fbfaca877aa",
+                    "_author": {
+                        "_id": "5974d92957c5118a344f83e9",
+                        "name": "arizal"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "Gunung Semeru",
+                    "quota": 5,
+                    "price": 40000
+                },
+                {
+                    "_id": "5974e40979595fbfaca877ae",
+                    "_author": {
+                        "_id": "5974da9257c5118a344f83ed",
+                        "name": "paijo"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "Gunung Semeru",
+                    "quota": 5,
+                    "price": 40000
+                }
+            ],
+            "start_from": 40000
+        },
+        {
+            "group": "Pahawang",
+            "trips": [
+                {
+                    "_id": "5974e4c1564cc2a7d4a2deba",
+                    "_author": {
+                        "_id": "5974da3a57c5118a344f83eb",
+                        "name": "tumpi"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "Pahawang",
+                    "quota": 5,
+                    "price": 40000
+                },
+                {
+                    "_id": "5974e4c1564cc2a7d4a2debd",
+                    "_author": {
+                        "_id": "5974da3a57c5118a344f83eb",
+                        "name": "tumpi"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "Pahawang",
+                    "quota": 5,
+                    "price": 40000
+                }
+            ],
+            "start_from": 40000
+        },
+        {
+            "group": "Gunung Bromo",
+            "trips": [
+                {
+                    "_id": "5974e55f564cc2a7d4a2dec1",
+                    "_author": {
+                        "_id": "5974d92957c5118a344f83e9",
+                        "name": "arizal"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "Gunung Bromo",
+                    "quota": 5,
+                    "price": 40000
+                },
+                {
+                    "_id": "5974e625135679b82c151c35",
+                    "_author": {
+                        "_id": "5974d92957c5118a344f83e9",
+                        "name": "arizal"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "Gunung Bromo",
+                    "quota": 5,
+                    "price": 40000
+                }
+            ],
+            "start_from": 40000
+        },
+        {
+            "group": "Gunung Merapi",
+            "trips": [
+                {
+                    "_id": "5974e67564ca8ea84056f532",
+                    "_author": {
+                        "_id": "5974d92957c5118a344f83e9",
+                        "name": "arizal"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "Gunung Merapi",
+                    "quota": 5,
+                    "price": 40000
+                },
+                {
+                    "_id": "5974e6ca64ca8ea84056f536",
+                    "_author": {
+                        "_id": "5974d92957c5118a344f83e9",
+                        "name": "arizal"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "Gunung Merapi",
+                    "quota": 5,
+                    "price": 40000
+                }
+            ],
+            "start_from": 40000
+        },
+        {
+            "group": "gunung merbabu",
+            "trips": [
+                {
+                    "_id": "5974e8ca211facb5b46a50ab",
+                    "_author": {
+                        "_id": "5974da9257c5118a344f83ed",
+                        "name": "paijo"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "gunung merbabu",
+                    "quota": 5,
+                    "price": 40000
+                }
+            ],
+            "start_from": 40000
+        },
+        {
+            "group": "Bali",
+            "trips": [
+                {
+                    "_id": "5974e9347ee38d31dc2df4ee",
+                    "_author": {
+                        "_id": "5974da9257c5118a344f83ed",
+                        "name": "paijo"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "Bali",
+                    "quota": 5,
+                    "price": 40000
+                }
+            ],
+            "start_from": 40000
+        },
+        {
+            "group": "raja ampat",
+            "trips": [
+                {
+                    "_id": "5974e9427ee38d31dc2df4f2",
+                    "_author": {
+                        "_id": "5974da9257c5118a344f83ed",
+                        "name": "paijo"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "raja ampat",
+                    "quota": 5,
+                    "price": 40000
+                }
+            ],
+            "start_from": 40000
+        },
+        {
+            "group": "Gunung Pratau",
+            "trips": [
+                {
+                    "_id": "5974ea21432062c050bada5d",
+                    "_author": {
+                        "_id": "5974da3a57c5118a344f83eb",
+                        "name": "tumpi"
+                    },
+                    "main_image": "https:///tes",
+                    "title": "tes",
+                    "destination": "Gunung Pratau",
+                    "quota": 5,
+                    "price": 40000
+                }
+            ],
+            "start_from": 40000
+        }
+    ]
+}
+```
+
+get popular trip.
+
+### Endpoint
+
+`GET /trip/by_popular`
+
+### Query Parameters
+Parameter | Required | Example
+--------- | ------- | -----------
+offset    | false   | `1` default offset is `0`
+limit     | false   | `10` default limit is `10`
+sort      | false   | `date.start` default is `date.start` `sort` could be anything
 
 
 
@@ -417,4 +632,101 @@ Parameter | Required | Example/Description
 id        | true    | trip id
 offset    | false   | `0` default offset is `0`
 limit     | false   | `10` default limit is `15`
+
+
+## Get Bookmark Trip
+> Success Result
+
+```json
+{
+    "error": false,
+    "data": [
+      {
+           "_id": "5923cfc450434044b836c3b8",
+           "profile_picture": "image url profile picture",
+           "name": "arizal"
+         },
+         {
+           "_id": "592510f6f856d02284b2f44b",
+           "profile_picture": "image url profile picture"
+           "name": "bibibi testititititi"
+         },
+         {
+           "_id": "59251006f856d02284b2f44a",
+           "profile_picture": "image url profile picture"
+           "name": "testititititi"
+         }
+    ]
+}
+```
+
+getting bookmark trip
+
+### Endpoint
+
+`GET /user/trip/bookmark`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+id        | true    | trip id
+offset    | false   | `0` default offset is `0`
+limit     | false   | `10` default limit is `15`
+
+
+## Bookmark Trip
+> Success Result
+
+```json
+{
+    "error": false,
+}
+```
+
+bookmark trip
+
+### Endpoint
+
+`POST /user/trip/bookmark`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+trip_id        | true    | trip id
+
+## Remove Bookmark Trip
+> Success Result
+
+```json
+{
+    "error": false,
+}
+```
+
+delete bookmark trip
+
+### Endpoint
+
+`DELETE /user/trip/bookmark/delete_single`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+trip_id        | true    | trip id
+
+## Remove All Bookmark Trip
+> Success Result
+
+```json
+{
+    "error": false,
+}
+```
+
+delete all bookmark trip
+
+### Endpoint
+
+`DELETE /user/trip/bookmark/delete_all`
+
 

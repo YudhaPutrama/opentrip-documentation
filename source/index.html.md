@@ -16,6 +16,7 @@ includes:
   - category
   - trip
   - activity
+  - search
   - errors
 
 search: true
