@@ -98,8 +98,8 @@ sort      | false   | `date.start` default is `date.start` `sort` could be anyth
 ### Trip Type
 Parameter | Required | Example
 --------- | ------- | -----------
-start         | true    | TIMESTAMP
-end      | true    | TIMESTAMP
+start         | false    | TIMESTAMP
+end      | false    | TIMESTAMP
 participant    | false   | `1`
 
 <aside class="notice">

@@ -594,6 +594,67 @@ Parameter | Required | Example/Description
 id        | true    | trip id
 
 
+## Get User Trip
+> Success Result
+
+```json
+{
+    "error": false,
+    "data": [{
+            "_id": "59785ff7815aa05520472eac",
+            "_author": {
+                "_id": "5974d92957c5118a344f83e9",
+                "name": "arizal"
+            },
+            "main_image": "https:///tes",
+            "title": "tiga",
+            "destination": "Gunung Sinabung",
+            "quota": 5,
+            "price": 40000,
+            "date": [
+                {
+                    "start": "2017-09-04T00:00:00.000Z",
+                    "end": "2017-09-04T00:00:00.000Z",
+                    "count": 0,
+                    "_joined_id": "59785ff7815aa05520472eaa"
+                }
+            ]
+        },{
+            "_id": "59785ff7815aa05520472eac",
+            "_author": {
+                "_id": "5974d92957c5118a344f83e9",
+                "name": "arizal"
+            },
+            "main_image": "https:///tes",
+            "title": "tiga",
+            "destination": "Gunung Sinabung",
+            "quota": 5,
+            "price": 40000,
+            "date": [
+                {
+                    "start": "2017-09-04T00:00:00.000Z",
+                    "end": "2017-09-04T00:00:00.000Z",
+                    "count": 0,
+                    "_joined_id": "59785ff7815aa05520472eaa"
+                }
+            ]
+        }
+    ]
+```
+
+get user upcoming and past trip
+
+### Endpoint
+
+`GET /user/trip/get_user_trip`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+user_id        | true    | trip id
+type     | true | `upcoming` or `past`
+
+
 ## Get Joined User of Trip
 > Success Result
 
@@ -730,3 +791,18 @@ delete all bookmark trip
 `DELETE /user/trip/bookmark/delete_all`
 
 
+
+## Remove All Bookmark Trip
+> Success Result
+
+```json
+{
+    "error": false,
+}
+```
+
+delete all bookmark trip
+
+### Endpoint
+
+`DELETE /user/trip/bookmark/delete_all`

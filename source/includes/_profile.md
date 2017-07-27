@@ -50,7 +50,7 @@ Get user data profile by id
 Parameter | Required | Description
 --------- | ------- | -----------
 id | true | user id `_id`
-from | optional | user id `_id`,to get follow you or not
+
 
 
 
