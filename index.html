@@ -876,11 +876,6 @@ You must replace <code>access_token</code> with access_token.
 <td>true</td>
 <td>user id <code class="prettyprint">_id</code></td>
 </tr>
-<tr>
-<td>from</td>
-<td>optional</td>
-<td>user id <code class="prettyprint">_id</code>,to get follow you or not</td>
-</tr>
 </tbody></table>
 
 <h2 id="update-user-profile">Update User Profile</h2>
@@ -2788,6 +2783,81 @@ Use JSON body request
 </tr>
 </tbody></table>
 
+<h2 id="get-user-trip">Get User Trip</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59785ff7815aa05520472eac"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5974d92957c5118a344f83e9"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiga"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gunung Sinabung"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quota"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"_joined_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59785ff7815aa05520472eaa"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59785ff7815aa05520472eac"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5974d92957c5118a344f83e9"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiga"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gunung Sinabung"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quota"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"_joined_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59785ff7815aa05520472eaa"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>get user upcoming and past trip</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/trip/get_user_trip</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>true</td>
+<td>trip id</td>
+</tr>
+<tr>
+<td>type</td>
+<td>true</td>
+<td><code class="prettyprint">upcoming</code> or <code class="prettyprint">past</code></td>
+</tr>
+</tbody></table>
+
 <h2 id="get-joined-user-of-trip">Get Joined User of Trip</h2>
 
 <blockquote>
@@ -2965,6 +3035,21 @@ Use JSON body request
 <td>trip id</td>
 </tr>
 </tbody></table>
+
+<h2 id="remove-all-bookmark-trip">Remove All Bookmark Trip</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>delete all bookmark trip</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /user/trip/bookmark/delete_all</code></p>
 
 <h2 id="remove-all-bookmark-trip">Remove All Bookmark Trip</h2>
 
@@ -4527,12 +4612,12 @@ Use JSON body request
 </thead><tbody>
 <tr>
 <td>start</td>
-<td>true</td>
+<td>false</td>
 <td>TIMESTAMP</td>
 </tr>
 <tr>
 <td>end</td>
-<td>true</td>
+<td>false</td>
 <td>TIMESTAMP</td>
 </tr>
 <tr>
