@@ -2902,7 +2902,7 @@ Use JSON body request
 <tr>
 <td>id</td>
 <td>true</td>
-<td>trip id</td>
+<td>trip date <code class="prettyprint">_joined_id</code></td>
 </tr>
 <tr>
 <td>offset</td>
@@ -3065,6 +3065,109 @@ Use JSON body request
 <h3 id="endpoint">Endpoint</h3>
 
 <p><code class="prettyprint">DELETE /user/trip/bookmark/delete_all</code></p>
+
+          <h1 id="booking">Booking</h1>
+
+<h2 id="book-trip">Book Trip</h2>
+
+          <h1 id="invite">Invite</h1>
+
+<h2 id="invite-user-to-join-trip">Invite user to join Trip</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>invite another user to join trip</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/trip/invite</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>trip_id</td>
+<td>true</td>
+<td>trip id</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>true</td>
+<td>user_id</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-trip-invites">Get Trip Invites</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+           </span><span class="s2">"_from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"profile_picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+           </span><span class="p">},</span><span class="w">
+           </span><span class="s2">"trip"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+                 </span><span class="s2">"_from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"profile_picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+                 </span><span class="p">},</span><span class="w">
+                 </span><span class="s2">"trip"</span><span class="p">:{</span><span class="w">
+                  </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:///tes"</span><span class="p">,</span><span class="w">
+                             </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes"</span><span class="p">,</span><span class="w">
+                             </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>getting joined user of the trip</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/trip/invite</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">0</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">10</code> default limit is <code class="prettyprint">15</code></td>
+</tr>
+</tbody></table>
 
           <h1 id="activity">Activity</h1>
 
