@@ -690,7 +690,7 @@ getting joined user of the trip
 ### Query Parameters
 Parameter | Required | Example/Description
 --------- | ------- | -----------
-id        | true    | trip id
+id        | true    | trip date `_joined_id`
 offset    | false   | `0` default offset is `0`
 limit     | false   | `10` default limit is `15`
 

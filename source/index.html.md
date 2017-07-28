@@ -15,6 +15,8 @@ includes:
   - media
   - category
   - trip
+  - booking
+  - tripinvite
   - activity
   - search
   - errors
