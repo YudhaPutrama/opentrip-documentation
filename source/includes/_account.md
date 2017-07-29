@@ -299,6 +299,30 @@ Parameter | Required | Description
 --------- | ---------| -----------
 phone_number | true | phone number
 
+## Resend OTP Code
+
+> Result
+
+```json
+{
+  "error": false,
+}
+```
+
+Adding phone number to user
+
+### Endpoint
+
+`POST /user/resend_otp_code`
+
+### Header
+
+Name | Required | Description | example
+--------- | ---------| -----------| -------------
+Authorization | true | access_token | `Authorization: Bearer <access_token>`
+
+
+
 ## Verify Phone Number
 
 > Result
