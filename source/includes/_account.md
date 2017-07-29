@@ -271,6 +271,34 @@ Parameter | Required | Description
 --------- | ---------| -----------
 key | true | Unique key from to verify email address
 
+## Add Phone Number
+
+> Result
+
+```json
+{
+  "error": false,
+}
+```
+
+Adding phone number to user
+
+### Endpoint
+
+`PUT /user/add_phone_number`
+
+### Header
+
+Name | Required | Description | example
+--------- | ---------| -----------| -------------
+Authorization | true | access_token | `Authorization: Bearer <access_token>`
+
+### Parameters
+
+Parameter | Required | Description
+--------- | ---------| -----------
+phone_number | true | phone number
+
 ## Verify Phone Number
 
 > Result
