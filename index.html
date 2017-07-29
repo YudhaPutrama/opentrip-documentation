@@ -665,6 +665,39 @@ You must replace <code>access_token</code> with access_token.
 </tr>
 </tbody></table>
 
+<h2 id="resend-otp-code">Resend OTP Code</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Adding phone number to user</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/resend_otp_code</code></p>
+
+<h3 id="header">Header</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+<th>example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>access_token</td>
+<td><code class="prettyprint">Authorization: Bearer &lt;access_token&gt;</code></td>
+</tr>
+</tbody></table>
+
 <h2 id="verify-phone-number">Verify Phone Number</h2>
 
 <blockquote>
