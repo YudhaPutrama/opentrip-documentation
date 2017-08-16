@@ -88,6 +88,7 @@ meeting_point | true | where meeting point
 date | true | time to trip,use unix timestamp
 is_public | true | is trip public
 quota | true | trip quota
+min_quota | true | trip minimum quota
 price | true | trip prize
 price_included | true | price included
 price_excluded | true | price excluded
