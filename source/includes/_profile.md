@@ -1,5 +1,25 @@
 # Profile
 
+## Upload Device Token
+> Success Result
+
+```json
+{
+  "error": false,
+}
+```
+### Endpoint
+
+to update user device fcm token, to send push notification.
+
+`PUT /user/update/token`
+
+### Query Parameters
+Parameter | Required | Description
+--------- | ------- | -----------
+device_token | true | device generated token for fcm
+
+
 ## Get User Profile
 
 > Result
@@ -123,7 +143,7 @@ address | optional | new user address | String
 identity_card | optional | new user identity_card `ktp` | Url image adresss
 profile_cover | optional | new user cover photo | Url image adresss
 profile_picture | optional | new user profile photo | Url image adresss
-
+device_token | optional | update user device token | to send post notification
 
 <aside class="notice">
 You can use `json` type on body request
