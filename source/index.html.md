@@ -17,6 +17,7 @@ includes:
   - trip
   - booking
   - tripinvite
+  - bankaccount
   - activity
   - search
   - errors
