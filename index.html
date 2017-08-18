@@ -900,6 +900,37 @@ You must replace <code>access_token</code> with access_token.
 
           <h1 id="profile">Profile</h1>
 
+<h2 id="upload-device-token">Upload Device Token</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="endpoint">Endpoint</h3>
+
+<p>to update user device fcm token, to send push notification.</p>
+
+<p><code class="prettyprint">PUT /user/update/token</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>device_token</td>
+<td>true</td>
+<td>device generated token for fcm</td>
+</tr>
+</tbody></table>
+
 <h2 id="get-user-profile">Get User Profile</h2>
 
 <blockquote>
@@ -1100,6 +1131,12 @@ You must replace <code>access_token</code> with access_token.
 <td>optional</td>
 <td>new user profile photo</td>
 <td>Url image adresss</td>
+</tr>
+<tr>
+<td>device_token</td>
+<td>optional</td>
+<td>update user device token</td>
+<td>to send post notification</td>
 </tr>
 </tbody></table>
 
@@ -3335,6 +3372,346 @@ time to complete payment : 45 minute
 <td><code class="prettyprint">10</code> default limit is <code class="prettyprint">15</code></td>
 </tr>
 </tbody></table>
+
+          <h1 id="wallet">Wallet</h1>
+
+<h2 id="wallet-balance">Wallet Balance</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"IDR"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get user wallet balance</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /wallet/balance</code></p>
+
+<h2 id="wallet-history">Wallet History</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"payment"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">20</span><span class="w">
+         </span><span class="s2">"initial_balance"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"final_balance"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"note"</span><span class="p">:</span><span class="s2">"OPS3434"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"refund"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">20</span><span class="w">
+             </span><span class="s2">"initial_balance"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"final_balance"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"note"</span><span class="p">:</span><span class="s2">"OPS3434"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"withdrawal"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">3000</span><span class="w">
+             </span><span class="s2">"initial_balance"</span><span class="p">:</span><span class="mi">4000</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"final_balance"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"note"</span><span class="p">:</span><span class="s2">"OPS3434"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+             </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">3000</span><span class="w">
+             </span><span class="s2">"initial_balance"</span><span class="p">:</span><span class="mi">4000</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"final_balance"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"note"</span><span class="p">:</span><span class="s2">"OPS3434"</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"receive_transfer"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">3000</span><span class="w">
+              </span><span class="s2">"initial_balance"</span><span class="p">:</span><span class="mi">4000</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"final_balance"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"note"</span><span class="p">:</span><span class="s2">"OPS3434"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+                 </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"topup"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"amount"</span><span class="p">:</span><span class="mi">3000</span><span class="w">
+                 </span><span class="s2">"initial_balance"</span><span class="p">:</span><span class="mi">4000</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"final_balance"</span><span class="p">:</span><span class="mi">7000</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"note"</span><span class="p">:</span><span class="s2">"OPS3434"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get user wallet history</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /wallet/balance</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td>limit get user data</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td>start from offset</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td>sorting</td>
+</tr>
+<tr>
+<td>action</td>
+<td>optional</td>
+<td>&ldquo;payment&rdquo;,&ldquo;refund&rdquo;,&ldquo;withdrawal&rdquo;,&ldquo;transfer&rdquo;,&ldquo;receive_transfer&rdquo;,&ldquo;topup&rdquo;</td>
+</tr>
+<tr>
+<td>from_date</td>
+<td>optional</td>
+<td>&ldquo;2017-05-21&rdquo;</td>
+</tr>
+<tr>
+<td>to_date</td>
+<td>optional</td>
+<td>&ldquo;2017-06-1&rdquo;</td>
+</tr>
+</tbody></table>
+
+          <h1 id="bank-account">Bank Account</h1>
+
+<h2 id="get-bank-account">Get Bank Account</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"asdasdsadas"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"full_name"</span><span class="p">:</span><span class="s2">"Tsubasa"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"account_number"</span><span class="p">:</span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"bank_code"</span><span class="p">:</span><span class="s2">"MND"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"bank_name"</span><span class="p">:</span><span class="s2">"MANDIRI"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"asdasdsadas"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"full_name"</span><span class="p">:</span><span class="s2">"Tsubasa"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"account_number"</span><span class="p">:</span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"bank_code"</span><span class="p">:</span><span class="s2">"MND"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"bank_name"</span><span class="p">:</span><span class="s2">"MANDIRI"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get user bank account</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /wallet/bank_account</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td>limit get user data</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td>start from offset</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td>sorting</td>
+</tr>
+</tbody></table>
+
+<h2 id="new-bank-account">New Bank Account</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"asdasdsadas"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"full_name"</span><span class="p">:</span><span class="s2">"Tsubasa"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"account_number"</span><span class="p">:</span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"bank_code"</span><span class="p">:</span><span class="s2">"MND"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"bank_name"</span><span class="p">:</span><span class="s2">"MANDIRI"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>create new user bank account</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /wallet/bank_account</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>full_name</td>
+<td>true</td>
+<td>full name</td>
+</tr>
+<tr>
+<td>account_number</td>
+<td>true</td>
+<td>account number</td>
+</tr>
+<tr>
+<td>bank_code</td>
+<td>true</td>
+<td>bank code</td>
+</tr>
+<tr>
+<td>bank_name</td>
+<td>true</td>
+<td>bank name</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-bank-account">Update Bank Account</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"sadasdasda"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"_author"</span><span class="p">:</span><span class="s2">"asdasdsadas"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"full_name"</span><span class="p">:</span><span class="s2">"Tsubasa"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"account_number"</span><span class="p">:</span><span class="s2">"123123123"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"bank_code"</span><span class="p">:</span><span class="s2">"MND"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"bank_name"</span><span class="p">:</span><span class="s2">"MANDIRI"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>updating user bank account</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">PUT /wallet/bank_account/:id/update</code></p>
+
+<aside class="notice">
+You must replace <code>:id</code> with bank account _id.
+</aside>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>full_name</td>
+<td>optional</td>
+<td>full name</td>
+</tr>
+<tr>
+<td>account_number</td>
+<td>optional</td>
+<td>account number</td>
+</tr>
+<tr>
+<td>bank_code</td>
+<td>optional</td>
+<td>bank code</td>
+</tr>
+<tr>
+<td>bank_name</td>
+<td>optional</td>
+<td>bank name</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-bank-account">Delete Bank Account</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>updating user bank account</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /wallet/bank_account/:id/delete</code></p>
+
+<aside class="notice">
+You must replace <code>:id</code> with bank account _id.
+</aside>
+
+<h2 id="delete-all-bank-account">Delete All Bank Account</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>updating user bank account</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /wallet/bank_account</code></p>
 
           <h1 id="activity">Activity</h1>
 
