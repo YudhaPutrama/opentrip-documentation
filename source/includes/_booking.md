@@ -16,7 +16,7 @@ get order id to (this is for mobile sdk)
 
 ### Endpoint
 
-`POST /booking/get_payment_token`
+`POST /booking/get_order_id`
 
 ### Query Parameters
 Parameter | Required | Example/Description
