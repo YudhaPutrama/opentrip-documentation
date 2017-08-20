@@ -3192,6 +3192,57 @@ Use JSON body request
 
           <h1 id="booking">Booking</h1>
 
+<h2 id="get-order-id">Get Order ID</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"booking_code"</span><span class="p">:</span><span class="s2">"OPIJDNK"</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"10000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get order id to (this is for mobile sdk)</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /booking/get_payment_token</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>trip_id</td>
+<td>true</td>
+<td>trip <code class="prettyprint">_id</code></td>
+</tr>
+<tr>
+<td>joined_id</td>
+<td>true</td>
+<td><code class="prettyprint">_joined_id</code> of field in date trip</td>
+</tr>
+<tr>
+<td>promo_code</td>
+<td>false</td>
+<td>voucher code</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+The time to make the payment process is 60 minutes until the order will be canceled.
+time to process payment : 15 minute
+time to complete payment : 45 minute
+</aside>
+
 <h2 id="get-payment-token">Get Payment Token</h2>
 
 <blockquote>
