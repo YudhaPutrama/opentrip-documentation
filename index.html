@@ -3620,6 +3620,210 @@ time to complete payment : 45 minute
 </tr>
 </tbody></table>
 
+<h2 id="withdrawal-request">Withdrawal Request</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queue"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"reference_no"</span><span class="p">:</span><span class="mi">231231231</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>request withdrawal from wallet</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /wallet/withdrawal</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>amount</td>
+<td>true</td>
+<td>amount to transfer</td>
+</tr>
+<tr>
+<td>bank_account_id</td>
+<td>true</td>
+<td>bank account <code class="prettyprint">_id</code></td>
+</tr>
+<tr>
+<td>password</td>
+<td>true</td>
+<td>user password</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>true</td>
+<td>notes withdrawal</td>
+</tr>
+<tr>
+<td>email</td>
+<td>optional</td>
+<td>email to receive notification</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+- minimum amount to transfer(Withdrawn) is : 25.000
+- disbursement cost is : 5.000
+- Withdrawal only once a day
+</aside>
+
+<h2 id="withdrawal-history">Withdrawal History</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queue"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"reference_no"</span><span class="p">:</span><span class="mi">231231231</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queue"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"reference_no"</span><span class="p">:</span><span class="mi">231231231</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queue"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reference_no"</span><span class="p">:</span><span class="mi">231231231</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queue"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"reference_no"</span><span class="p">:</span><span class="mi">231231231</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get withdrawal history</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /wallet/history/withdrawals</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td>limit get user data</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td>start from offset</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>false</td>
+<td>sorting</td>
+</tr>
+<tr>
+<td>from_date</td>
+<td>optional</td>
+<td>&ldquo;2017-05-21&rdquo;</td>
+</tr>
+<tr>
+<td>to_date</td>
+<td>optional</td>
+<td>&ldquo;2017-06-1&rdquo;</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-detail-withdrawal">Get Detail Withdrawal</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+           </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"beneficiary_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"beneficiary_account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1150006390175"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT. Bank Mandiri (Persero) Tbk."</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"reference_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11540d36312884"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testing"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"beneficiary_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tumpistudio@gmail.com"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queued"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Muhammad Arizal"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-21T10:54:44Z"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-21T10:54:44Z"</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get detail withdrawal</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /wallet/history/withdrawals/:reference_no</code></p>
+
+<h2 id="transfer">Transfer</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>transfer to another account</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /wallet/transfer</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>amount</td>
+<td>true</td>
+<td>amount to transfer</td>
+</tr>
+<tr>
+<td>password</td>
+<td>true</td>
+<td>user password</td>
+</tr>
+<tr>
+<td>email</td>
+<td>true</td>
+<td>another user email to receive transfer</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>true</td>
+<td>notes of transfer</td>
+</tr>
+</tbody></table>
+
           <h1 id="bank-account">Bank Account</h1>
 
 <h2 id="get-bank-account">Get Bank Account</h2>
