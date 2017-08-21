@@ -82,3 +82,65 @@ Parameter | Required | Example/Description
 --------- | ------- | -----------
 booking_code| false | voucher code
 
+##Get Booked Trip
+> Success Result
+
+```json
+{
+    "error": false,
+    "data": [
+        {
+            "_id": "598adeaea907bd6aee3928b5",
+            "_leader": {
+                "_id": "5927f48c8553514047eee97c",
+                "name": "tes"
+            },
+            "date": {
+                "start": "2017-09-01T00:00:00.000Z",
+                "end": "2017-09-01T00:00:00.000Z"
+            },
+            "_trip": {
+                "_id": "598adeaea907bd6aee3928b6",
+                "main_image": "https:///tes",
+                "title": "tes",
+                "destination": "Tangkuban Perahu"
+            },
+            "quota": 5,
+            "count": 2,
+            "trip_leader": true
+        },
+         {
+                    "_id": "598adeaea907bd6aee3928b5",
+                    "_leader": {
+                        "_id": "5927f48c8553514047eee97c",
+                        "name": "tes"
+                    },
+                    "date": {
+                        "start": "2017-09-01T00:00:00.000Z",
+                        "end": "2017-09-01T00:00:00.000Z"
+                    },
+                    "_trip": {
+                        "_id": "598adeaea907bd6aee3928b6",
+                        "main_image": "https:///tes",
+                        "title": "tes",
+                        "destination": "Tangkuban Perahu"
+                    },
+                    "quota": 5,
+                    "count": 2,
+                    "trip_leader": false
+                }
+    ]
+}
+```
+get user booked trip
+
+### Endpoint
+
+`GET /user/trip/booked`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+limit     | optional | default '10'
+offset    | optional | 0
+sort      | optional | sort

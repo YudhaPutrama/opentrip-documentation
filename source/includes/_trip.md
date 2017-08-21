@@ -652,7 +652,7 @@ get user upcoming and past trip
 ### Query Parameters
 Parameter | Required | Example/Description
 --------- | ------- | -----------
-user_id        | true    | trip id
+user_id        | true    | user id
 type     | true | `upcoming` or `past`
 
 
@@ -793,17 +793,3 @@ delete all bookmark trip
 
 
 
-## Remove All Bookmark Trip
-> Success Result
-
-```json
-{
-    "error": false,
-}
-```
-
-delete all bookmark trip
-
-### Endpoint
-
-`DELETE /user/trip/bookmark/delete_all`
