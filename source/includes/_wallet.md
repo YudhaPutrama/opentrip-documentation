@@ -93,3 +93,32 @@ sort      |  false  | sorting
 action | optional | "payment","refund","withdrawal","transfer","receive_transfer","topup"
 from_date | optional | "2017-05-21"
 to_date | optional | "2017-06-1"
+
+
+## Withdrawal Request
+> Success Result
+
+```json
+{
+    "error": false,
+    "data":{
+     "status": "queue",
+     "reference_no":231231231
+    }
+}
+```
+request withdrawal from wallet
+
+### Endpoint
+
+`POST /wallet/withdrawal`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+amount    | true    | amount to transfer
+bank_account_id | true | bank account `_id`
+password  | true | user password
+notes     | true  | notes withdrawal
+email     | optional | email to receive notification
+
