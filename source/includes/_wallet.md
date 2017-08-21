@@ -82,7 +82,7 @@ get user wallet history
 
 ### Endpoint
 
-`GET /wallet/balance`
+`GET /wallet/history`
 
 ### Query Parameters
 Parameter | Required | Example/Description
