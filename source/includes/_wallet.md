@@ -122,3 +122,100 @@ password  | true | user password
 notes     | true  | notes withdrawal
 email     | optional | email to receive notification
 
+<aside class="notice">
+- minimum amount to transfer(Withdrawn) is : 25.000
+- disbursement cost is : 5.000
+- Withdrawal only once a day
+</aside>
+
+
+## Withdrawal History
+> Success Result
+
+```json
+{
+    "error": false,
+    "data":[
+    {
+     "status": "queue",
+     "reference_no":231231231
+    },
+    {
+     "status": "queue",
+     "reference_no":231231231
+    },
+    {
+      "status": "queue",
+      "reference_no":231231231
+    },
+    {
+       "status": "queue",
+       "reference_no":231231231
+    }
+    ]
+}
+```
+get withdrawal history
+
+### Endpoint
+
+`GET /wallet/history/withdrawals`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+limit        | false    | limit get user data
+offset         |false | start from offset
+sort      |  false  | sorting
+from_date | optional | "2017-05-21"
+to_date | optional | "2017-06-1"
+
+## Get Detail Withdrawal
+> Success Result
+
+```json
+{
+    "error": false,
+    "data":{
+           "amount": 10000,
+           "beneficiary_name": "any",
+           "beneficiary_account": "1150006390175",
+           "bank": "PT. Bank Mandiri (Persero) Tbk.",
+           "reference_no": "11540d36312884",
+           "notes": "testing",
+           "beneficiary_email": "tumpistudio@gmail.com",
+           "status": "queued",
+           "created_by": "Muhammad Arizal",
+           "created_at": "2017-08-21T10:54:44Z",
+           "updated_at": "2017-08-21T10:54:44Z"
+       }
+}
+```
+get detail withdrawal
+
+### Endpoint
+
+`GET /wallet/history/withdrawals/:reference_no`
+
+## Transfer
+> Success Result
+
+```json
+{
+    "error": false
+}
+```
+transfer to another account
+
+### Endpoint
+
+`POST /wallet/transfer`
+
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+amount        | true    | amount to transfer
+password       |true | user password
+email      |  true  |another user email to receive transfer
+notes | true | notes of transfer
+
