@@ -19,6 +19,7 @@ includes:
   - tripinvite
   - wallet
   - bankaccount
+  - chat
   - activity
   - search
   - errors
