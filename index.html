@@ -4040,6 +4040,255 @@ You must replace <code>:id</code> with bank account _id.
 
 <p><code class="prettyprint">DELETE /wallet/bank_account</code></p>
 
+          <h1 id="chat">Chat</h1>
+
+<h2 id="get-personal-chat">Get Personal Chat</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+               </span><span class="s2">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                   </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                       </span><span class="s2">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"total_room"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+                   </span><span class="p">},</span><span class="w">
+                   </span><span class="s2">"rooms_info"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                       </span><span class="p">{</span><span class="w">
+                           </span><span class="s2">"last_comment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">661730</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"last_comment_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yoi bos"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"last_comment_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-24T12:01:05Z"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                               </span><span class="p">{</span><span class="w">
+                                   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qiscuss3.s3.amazonaws.com/uploads/55c0c6ee486be6b686d52e5b9bbedbbf/2.png"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tumpistudio@gmail.com"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">134079</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_read_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">661730</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_received_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John doe"</span><span class="w">
+                               </span><span class="p">},</span><span class="w">
+                               </span><span class="p">{</span><span class="w">
+                                   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qiscuss3.s3.amazonaws.com/uploads/55c0c6ee486be6b686d52e5b9bbedbbf/2.png"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"muhammadarizals1@gmail.com"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">134024</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_read_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">661682</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_received_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arizal"</span><span class="w">
+                               </span><span class="p">}</span><span class="w">
+                           </span><span class="p">],</span><span class="w">
+                           </span><span class="s2">"room_avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31387</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John doe"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"unread_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                       </span><span class="p">},</span><span class="w">
+                       </span><span class="p">{</span><span class="w">
+                           </span><span class="s2">"last_comment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">661714</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"last_comment_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ohayo"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"last_comment_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-24T12:00:18Z"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                               </span><span class="p">{</span><span class="w">
+                                   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qiscuss3.s3.amazonaws.com/uploads/55c0c6ee486be6b686d52e5b9bbedbbf/2.png"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"muhammadarizals1@gmail.com"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">134024</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_read_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">661714</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_received_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arizal"</span><span class="w">
+                               </span><span class="p">}</span><span class="w">
+                           </span><span class="p">],</span><span class="w">
+                           </span><span class="s2">"room_avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31384</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"unread_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                       </span><span class="p">},</span><span class="w">
+                       </span><span class="p">{</span><span class="w">
+                           </span><span class="s2">"last_comment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"last_comment_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"last_comment_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-24T11:22:14Z"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                               </span><span class="p">{</span><span class="w">
+                                   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qiscuss3.s3.amazonaws.com/uploads/55c0c6ee486be6b686d52e5b9bbedbbf/2.png"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"muhammadarizals1@gmail.com"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">134024</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_read_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_received_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arizal"</span><span class="w">
+                               </span><span class="p">},</span><span class="w">
+                               </span><span class="p">{</span><span class="w">
+                                   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qiscuss3.s3.amazonaws.com/uploads/55c0c6ee486be6b686d52e5b9bbedbbf/2.png"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes5@tes.com"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">134042</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_read_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_received_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pasijo"</span><span class="w">
+                               </span><span class="p">}</span><span class="w">
+                           </span><span class="p">],</span><span class="w">
+                           </span><span class="s2">"room_avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31375</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pasijo"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"unread_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                       </span><span class="p">},</span><span class="w">
+                       </span><span class="p">{</span><span class="w">
+                           </span><span class="s2">"last_comment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"last_comment_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"last_comment_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-24T11:10:39Z"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                               </span><span class="p">{</span><span class="w">
+                                   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qiscuss3.s3.amazonaws.com/uploads/55c0c6ee486be6b686d52e5b9bbedbbf/2.png"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tes@tes.com"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">134028</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_read_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_received_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssttuiui "</span><span class="w">
+                               </span><span class="p">},</span><span class="w">
+                               </span><span class="p">{</span><span class="w">
+                                   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qiscuss3.s3.amazonaws.com/uploads/55c0c6ee486be6b686d52e5b9bbedbbf/2.png"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"muhammadarizals1@gmail.com"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">134024</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_read_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_received_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arizal"</span><span class="w">
+                               </span><span class="p">}</span><span class="w">
+                           </span><span class="p">],</span><span class="w">
+                           </span><span class="s2">"room_avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31369</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssttuiui "</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"unread_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                       </span><span class="p">},</span><span class="w">
+                       </span><span class="p">{</span><span class="w">
+                           </span><span class="s2">"last_comment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"last_comment_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"last_comment_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-24T11:09:41Z"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                               </span><span class="p">{</span><span class="w">
+                                   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qiscuss3.s3.amazonaws.com/uploads/55c0c6ee486be6b686d52e5b9bbedbbf/2.png"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">133818</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_read_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_received_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sssasdassdasd"</span><span class="w">
+                               </span><span class="p">},</span><span class="w">
+                               </span><span class="p">{</span><span class="w">
+                                   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qiscuss3.s3.amazonaws.com/uploads/55c0c6ee486be6b686d52e5b9bbedbbf/2.png"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"muhammadarizals1@gmail.com"</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">134024</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_read_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"last_comment_received_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arizal"</span><span class="w">
+                               </span><span class="p">}</span><span class="w">
+                           </span><span class="p">],</span><span class="w">
+                           </span><span class="s2">"room_avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31368</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sssasdassdasd"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"room_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"unread_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                       </span><span class="p">}</span><span class="w">
+                   </span><span class="p">]</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get user personal chat</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /chat/personal</code></p>
+
+<h2 id="get-group-chat">Get Group Chat</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+               </span><span class="s2">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                   </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                       </span><span class="s2">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"total_room"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+                   </span><span class="p">},</span><span class="w">
+                   </span><span class="s2">"rooms_info"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                                      </span><span class="s2">"last_comment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"last_comment_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"last_comment_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-03T07:20:37Z"</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"room_avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"room_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32898</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"room_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trip name"</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"room_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"unread_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                                  </span><span class="p">},</span><span class="w">
+                                  </span><span class="p">{</span><span class="w">
+                                      </span><span class="s2">"last_comment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"last_comment_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"last_comment_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-03T07:13:34Z"</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"room_avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"room_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32896</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"room_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trip name"</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"room_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w">
+                                      </span><span class="s2">"unread_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                                  </span><span class="p">},</span><span class="w">
+                   </span><span class="p">]</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get user group chat</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /chat/group</code></p>
+
+<h2 id="qiscus-rest-api">Qiscus Rest Api</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">---</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>using qiscus rest api
+<code class="prettyprint">https://www.qiscus.com/docs/restapi</code></p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /chat/custom_api</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>true</td>
+<td>request body data</td>
+</tr>
+<tr>
+<td>method</td>
+<td>true</td>
+<td>POST PUT GET</td>
+</tr>
+<tr>
+<td>url</td>
+<td>true</td>
+<td>url path &lsquo;/api/v2/rest/add_room_participants&rsquo;</td>
+</tr>
+</tbody></table>
+
           <h1 id="activity">Activity</h1>
 
 <h2 id="create-new-posting">Create New Posting</h2>
