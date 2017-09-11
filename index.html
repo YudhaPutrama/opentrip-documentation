@@ -1312,6 +1312,169 @@ When you updating phone number user will receive sms verification
 
 <p><code class="prettyprint">DELETE /media/delete/identity_card</code></p>
 
+          <h1 id="notification">Notification</h1>
+
+<h2 id="add-device">Add Device</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>add user FCM Token</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /notifications/add_device</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>device_token</td>
+<td>true</td>
+<td>device generated token for fcm</td>
+</tr>
+</tbody></table>
+
+<h2 id="log-out">Log Out</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>User logOut</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /notifications/logout</code></p>
+
+<h2 id="get-unread-notifications">Get Unread Notifications</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get unread notifications</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /notifications/unreads</code></p>
+
+<h2 id="set-notification-as-read">Set Notification as Read</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>set all notifications as read</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">PUT /notifications</code></p>
+
+<h2 id="set-a-notification-as-read">Set A Notification as Read</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>set single notifications as read</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">PUT /notifications/::notification_id</code></p>
+
+<h2 id="get-list-of-notification">Get List of Notification</h2>
+
+<blockquote>
+<p>Success Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"trip_full"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"your trip is full"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"trip id"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"read"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"join_trip"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"andika join your trip"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"trip id misalnya"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"read"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"join_trip"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"andika join your trip"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"user id misalnya"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"read"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"upcoming_trip"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"upcoming trip pada tanggal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"user id misalnya"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"read"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get list of all notifications</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /notifications/list</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>trip id</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>false</td>
+<td><code class="prettyprint">0</code> default offset is <code class="prettyprint">0</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>false</td>
+<td><code class="prettyprint">10</code> default limit is <code class="prettyprint">15</code></td>
+</tr>
+</tbody></table>
+
           <h1 id="social">Social</h1>
 
 <h2 id="get-user-following">Get User Following</h2>
