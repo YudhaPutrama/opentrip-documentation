@@ -11,6 +11,7 @@ toc_footers:
 includes:
   - account
   - profile
+  - notification
   - social
   - media
   - category
