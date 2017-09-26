@@ -157,6 +157,11 @@ get user personal chat
 
 `GET /chat/personal`
 
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+page        | optional    | 1
+
 ## Get Group Chat
 > Success Result
 
@@ -202,26 +207,26 @@ get user group chat
 
 `GET /chat/group`
 
+### Query Parameters
+Parameter | Required | Example/Description
+--------- | ------- | -----------
+page        | optional    | 1
 
-## Qiscus Rest Api
+
+## Leave Chat
 > Success Result
 
 ```json
 {
-    "error": false,
-    "data": ---
+    "error": false
 }
 ```
-using qiscus rest api
-`https://www.qiscus.com/docs/restapi`
-
+user leave chat
 ### Endpoint
 
-`POST /chat/custom_api`
+`POST /chat/leave`
 
 ### Query Parameters
 Parameter | Required | Example/Description
 --------- | ------- | -----------
-body        | true    | request body data
-method         |true | POST PUT GET
-url      |  true  | url path '/api/v2/rest/add_room_participants'
+room_id        | true    | "2324324"
