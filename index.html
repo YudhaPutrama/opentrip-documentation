@@ -4363,6 +4363,22 @@ You must replace <code>:id</code> with bank account _id.
 
 <p><code class="prettyprint">GET /chat/personal</code></p>
 
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>optional</td>
+<td>1</td>
+</tr>
+</tbody></table>
+
 <h2 id="get-group-chat">Get Group Chat</h2>
 
 <blockquote>
@@ -4409,22 +4425,36 @@ You must replace <code>:id</code> with bank account _id.
 
 <p><code class="prettyprint">GET /chat/group</code></p>
 
-<h2 id="qiscus-rest-api">Qiscus Rest Api</h2>
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Example/Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>optional</td>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h2 id="leave-chat">Leave Chat</h2>
 
 <blockquote>
 <p>Success Result</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">---</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>using qiscus rest api
-<code class="prettyprint">https://www.qiscus.com/docs/restapi</code></p>
+<p>user leave chat</p>
 
 <h3 id="endpoint">Endpoint</h3>
 
-<p><code class="prettyprint">POST /chat/custom_api</code></p>
+<p><code class="prettyprint">POST /chat/leave</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -4436,19 +4466,9 @@ You must replace <code>:id</code> with bank account _id.
 </tr>
 </thead><tbody>
 <tr>
-<td>body</td>
+<td>room_id</td>
 <td>true</td>
-<td>request body data</td>
-</tr>
-<tr>
-<td>method</td>
-<td>true</td>
-<td>POST PUT GET</td>
-</tr>
-<tr>
-<td>url</td>
-<td>true</td>
-<td>url path &lsquo;/api/v2/rest/add_room_participants&rsquo;</td>
+<td>&ldquo;2324324&rdquo;</td>
 </tr>
 </tbody></table>
 
