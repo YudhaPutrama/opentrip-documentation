@@ -3338,6 +3338,249 @@ Use JSON body request
 
 <p><code class="prettyprint">DELETE /user/trip/bookmark/delete_all</code></p>
 
+          <h1 id="review-and-rating">Review and Rating</h1>
+
+<h2 id="get-waiting-list-review">Get Waiting List review</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59da0cab2b48470010a8c865"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_leader"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59c85563d6a8840010b91479"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tryon lannister"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-13T17:00:00.000Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-12T17:00:00.000Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"_trip"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59da0cac2b48470010a8c866"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"main_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-ap-southeast-1.amazonaws.com/opentrip-media/59c85563d6a8840010b91479_02dff637b986d163.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boyolali trip"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boyolali"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get waiting list to review</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/social/review/waiting</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sort</td>
+<td>optional</td>
+<td><code class="prettyprint">date.end</code> is default sort</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>optional</td>
+<td><code class="prettyprint">50</code> is default limit</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>optional</td>
+<td><code class="prettyprint">0</code> is default offset</td>
+</tr>
+</tbody></table>
+
+<h2 id="action-review">Action Review</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"point"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b5978c0f7361678bbec60"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa payah"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b598ac0f7361678bbec61"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>review another user</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /user/social/action/review</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>true</td>
+<td>another user id to review or <code class="prettyprint">_leader._id</code> from waiting list review</td>
+</tr>
+<tr>
+<td>review_id</td>
+<td>true</td>
+<td>review id from <code class="prettyprint">_id</code> waiting list review</td>
+</tr>
+<tr>
+<td>point</td>
+<td>true</td>
+<td>point rating <code class="prettyprint">0</code> to <code class="prettyprint">5</code></td>
+</tr>
+<tr>
+<td>title</td>
+<td>optional</td>
+<td>review title</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>optional</td>
+<td>review comment</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-user-review">Get User Review</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b598ac0f7361678bbec61"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-22T05:45:46.662Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-22T05:45:46.662Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"point"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://alamat"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b5978c0f7361678bbec60"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa payah"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b598ac0f7361678bbec61"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-22T05:45:46.662Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-22T05:45:46.662Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"point"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arizal"</span><span class="w">
+                </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://alamat"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b5978c0f7361678bbec60"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa payah"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get user review data</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/social/review</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>id user untuk diambil reviewnya</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>optional</td>
+<td><code class="prettyprint">createdAt</code> is default sort</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>optional</td>
+<td><code class="prettyprint">10</code> is default limit</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>optional</td>
+<td><code class="prettyprint">0</code> is default offset</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-my-review">Get My Review</h2>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b598ac0f7361678bbec61"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-22T05:45:46.662Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-22T05:45:46.662Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"point"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b57fac0f7361678bbec5b"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594b5978c0f7361678bbec60"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa payah"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>get user review to another user.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /user/social/my_review</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>id user untuk diambil reviewnya</td>
+</tr>
+</tbody></table>
+
           <h1 id="booking">Booking</h1>
 
 <h2 id="get-order-id">Get Order ID</h2>
