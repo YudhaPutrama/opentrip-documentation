@@ -150,6 +150,95 @@ important_notice | false | important notice
 ```
 
 
+## Edit Trip
+> Success Result
+
+```json
+{
+    "error": false,
+    "data": {
+            "_author": "5933658b705c0a671c510acd",
+            "_category": "test",
+            "main_image": "https:///tes",
+            "title": "tes",
+            "description": "ttt",
+            "additional_note": "this is additional note",
+            "important_notice": "eh ini important notice",
+            "is_public": false,
+            "quota": 5,
+            "price": 40000,
+            "_id": "593e7da24d5c58aa6c349d3a",
+            "activities": [
+                {
+                    "title": "tess",
+                    "image": "ini gambar",
+                    "_id": "593e7da24d5c58aa6c349d3b",
+                    "hourly": [
+                        {
+                            "start": 7,
+                            "end": 8,
+                            "activity": "makan-makan",
+                            "_id": "593e7da24d5c58aa6c349d3c"
+                        },
+                        .....
+                        .....
+                        .....
+                    ]
+                },
+                .....
+                .....
+                .....
+            ],
+            "date": {
+                "start": "1970-01-18T07:54:10.267Z",
+                "end": "1970-01-18T07:54:10.267Z"
+            },
+            "meeting_point": {
+                "name": "name destination",
+                "lat": -6.9739024,
+                "long": 107.627451
+            }
+        }
+}
+```
+edit exiting trip
+
+### Endpoint
+
+`POST /trip/edit`
+
+<aside class="notice">
+Remember — User must be verified to make trip
+</aside>
+
+<aside class="notice">
+Use JSON body request
+</aside>
+
+### Body request
+name | Required | Description
+--------- | ------- | -----------
+trip_id  | true | trip `_id`
+category | optional | trip category
+main_image | optional | main header image
+title | optional | trip title
+description | optional | trip description
+destination | optional | trip destination
+meeting_point | optional | where meeting point
+date | optional | time to trip,use unix timestamp
+is_public | optional | is trip public
+quota | optional | trip quota
+min_quota | optional | trip minimum quota
+price | optional | trip prize
+price_included | optional | price included
+price_excluded | optional | price excluded
+activities | optional | trip activities
+requirement_equipment | optional | price excluded
+additional_note | optional | additional note
+important_notice | optional | important notice
+
+
+
 ## Get Popular Trip
 > Success Result
 
