@@ -17,6 +17,7 @@ includes:
   - category
   - trip
   - rating
+  - promos
   - booking
   - tripinvite
   - wallet
